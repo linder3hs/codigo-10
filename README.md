@@ -62,3 +62,7 @@ git log
 ```bash
 git show id-de-commit
 ```
+
+```bash
+git push origin main
+```
