@@ -20,11 +20,24 @@
           type="text"
           required
           name="nombre"
+          readonly
           placeholder="ingrese su nombre"
         />
       </p>
 
       <!-- INPUT type: number -->
+      <!-- Que el input tenga como max8 numeros -->
+      <!-- maxlength: Para la longitud max -->
+      <p>
+        <input
+          id="input-dni"
+          type="number"
+          style="width: 140px"
+          maxlength="8"
+          name="dni"
+          placeholder="Ingrese su DNI"
+        />
+      </p>
       <p>
         <input
           required
@@ -71,7 +84,7 @@
       <!-- Lista de opciones -->
       <p>
         <select required>
-          <option value="" disabled>Selecciona un curso</option>
+          <option value="1" disabled>Selecciona un curso</option>
           <option value="curso-react" selected>Curso de React</option>
           <option value="curso-html">Curso de HTML</option>
           <option value="curso-css">Curso de CSS</option>
