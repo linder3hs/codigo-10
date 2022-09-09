@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+  </head>
+  <body>
+    <!-- *PARA PODER CREAR UN FORMULARIO NECESITAMOS LA ETIQUETA form -->
+    <form action="">
+      <!-- !Lo que esta dentro son las partes del formulario -->
+      <!-- !IMPORTANT: Casi todos los tipos de input tiene placeholder -->
+      <!-- INPUT type: text -->
+      <p>
+        <input
+          id="input-nombre"
+          value=""
+          type="text"
+          placeholder="ingrese su nombre"
+        />
+      </p>
+
+      <!-- INPUT type: number -->
+      <p>
+        <input type="number" placeholder="Ingrese su edad" />
+      </p>
+
+      <!-- INPUT type: email -->
+      <p>
+        <input type="email" placeholder="Ingrese su correo" />
+      </p>
+
+      <!-- INPUT type: password -->
+      <p>
+        <input type="password" placeholder="Ingrese su contraseña" />
+      </p>
+
+      <!-- INPUT type: date -->
+      <p>
+        <input type="date" placeholder="Ingrese su fecha" />
+      </p>
+
+      <!-- Lista de opciones -->
+      <p>
+        <select>
+          <option value="" disabled selected>Selecciona un curso</option>
+          <option value="curso-react">Curso de React</option>
+          <option value="curso-html">Curso de HTML</option>
+          <option value="curso-css">Curso de CSS</option>
+          <option value="curso-angular">Curso de Angular</option>
+        </select>
+      </p>
+
+      <!-- Botones para enviar datos -->
+      <button type="submit">Enviar datos con boton</button>
+      <input type="submit" value="Enviar datos con input" />
+    </form>
+  </body>
+</html>
