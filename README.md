@@ -20,7 +20,7 @@ git config --global user.email "email"
 git config --global user.name "username"
 ```
 
-* Sirve para poder empezar a usar el control de version (git) en 
+* Sirve para poder empezar a usar el control de version (git) en
 nuestra carpeta.
 
 * Esto solo se una vez por carpeta

@@ -12,40 +12,67 @@
       <!-- !Lo que esta dentro son las partes del formulario -->
       <!-- !IMPORTANT: Casi todos los tipos de input tiene placeholder -->
       <!-- INPUT type: text -->
+      <!--? required: true(verdadero) -->
       <p>
         <input
           id="input-nombre"
-          value=""
+          value="pepe"
           type="text"
+          required
+          name="nombre"
           placeholder="ingrese su nombre"
         />
       </p>
 
       <!-- INPUT type: number -->
       <p>
-        <input type="number" placeholder="Ingrese su edad" />
+        <input
+          required
+          value="92"
+          name="edad"
+          type="number"
+          placeholder="Ingrese su edad"
+        />
       </p>
 
       <!-- INPUT type: email -->
       <p>
-        <input type="email" placeholder="Ingrese su correo" />
+        <input
+          value="pepe@gmail.com"
+          required
+          type="email"
+          name="correo"
+          placeholder="Ingrese su correo"
+        />
       </p>
 
       <!-- INPUT type: password -->
       <p>
-        <input type="password" placeholder="Ingrese su contraseña" />
+        <input
+          value="1234567"
+          required
+          type="password"
+          name="password"
+          placeholder="Ingrese su contraseña"
+        />
       </p>
 
       <!-- INPUT type: date -->
       <p>
-        <input type="date" placeholder="Ingrese su fecha" />
+        <input
+          id="input-fecha"
+          value="2022-09-08"
+          required
+          type="date"
+          placeholder="Ingrese su fecha"
+        />
       </p>
 
       <!-- Lista de opciones -->
       <p>
-        <select>
-          <option value="" disabled selected>Selecciona un curso</option>
-          <option value="curso-react">Curso de React</option>
+        <select required>
+          <option value="" disabled>Selecciona un curso</option>
+          <option value="curso-react" selected>Curso de React</option>
           <option value="curso-html">Curso de HTML</option>
           <option value="curso-css">Curso de CSS</option>
           <option value="curso-angular">Curso de Angular</option>
