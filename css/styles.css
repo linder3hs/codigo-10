@@ -26,3 +26,16 @@ h1 {
     padding-right: 10px;
 }
 
+.celular > h2 {
+    color: red;
+}
+.celular > h3 {
+    color: brown;
+}
+
+.audifono > h2 {
+    color: green;
+}
+.audifono > h3 {
+    color: aquamarine;
+}
