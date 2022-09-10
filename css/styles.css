@@ -1,9 +1,13 @@
+:root {
+    font-size: 20px;
+}
+
 h1 {
     color: green;
     background-color: beige;
     padding: 20px;
     text-align: center;
-    font-size: 20px;
+    font-size: 3rem;
 }
 #div_temas {
     display: none;
