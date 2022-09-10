@@ -9,3 +9,11 @@ h1 {
     display: none;
 }
 
+
+.product_cell {
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+}
+
