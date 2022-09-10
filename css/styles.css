@@ -17,3 +17,12 @@ h1 {
     margin: 20px;
 }
 
+.laptop > h2 {
+    color: blue;
+}
+.laptop > h3 {
+    color:cadetblue;
+    text-align: right;
+    padding-right: 10px;
+}
+
