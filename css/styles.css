@@ -31,6 +31,9 @@ h1 {
 .laptop > h2 {
     color: blue;
 }
+.laptop > h2::before {
+    content: "💻 ";
+}
 .laptop > h3 {
     color:cadetblue;
     text-align: right;
@@ -39,6 +42,9 @@ h1 {
 
 .celular > h2 {
     color: red;
+}
+.celular > h2::before {
+    content: "📱 ";
 }
 .celular > h3 {
     color: brown;
@@ -49,4 +55,51 @@ h1 {
 }
 .audifono > h3 {
     color: aquamarine;
+}
+
+/* Estilos para el formulario */
+.div_form {
+    width: 400px;
+    margin: 20px auto;
+}
+
+.div_form > form > input {
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 70%;
+    font-size: 20px;
+    padding-left: 20px;
+    outline: none;
+}
+
+.div_form > form > input:focus {
+    border: 2px solid blue;
+}
+
+.div_form > form > button {
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 28%;
+    outline: none;
+}
+.div_form > form > button:hover {
+    background-color: #666;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.div_form > form > button:focus {
+    border: 2px solid red;
+}
+
+/* Pseudo-elementos */
+.price::before {
+    content: "$ ";
+    font-size: 12px;
+}
+.price::after {
+    content: ".00";
+    font-size: 12px;
 }
