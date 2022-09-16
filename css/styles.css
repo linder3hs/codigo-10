@@ -18,8 +18,9 @@ h1 {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 3rem;
 }
+
 #div_temas {
-  display: none;
+  display: block;
 }
 
 .product_cell {

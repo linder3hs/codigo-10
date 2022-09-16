@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(30, 38%, 92%);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.left-image {
+  background: url("../images/image-product-desktop.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 300px;
+  background-color: #fff;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.content {
+  height: 400px;
+  width: 250px;
+  background-color: #fff;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 20px;
+}
+
+.sub-title {
+  font-family: "Montserrat", sans-serif;
+  color: hsl(228, 12%, 48%);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 4px;
+}
+
+.title {
+  color: hsl(212, 21%, 14%);
+  font-family: "Fraunces", sans-serif;
+  margin-top: 15px;
+}
+
+.text-content {
+  font-family: "Montserrat", sans-serif;
+  color: hsl(228, 12%, 48%);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.content-price {
+  display: flex;
+  align-items: center;
+}
+
+.offert-price {
+  color: hsl(158, 36%, 37%);
+  font-family: "Fraunces", sans-serif;
+  font-weight: 700;
+}
+
+.real-price {
+  font-family: "Montserrat", sans-serif;
+  color: hsl(228, 12%, 48%);
+  margin-left: 10px;
+  font-size: 13px;
+  text-decoration: line-through;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  background-color: hsl(158, 36%, 37%);
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+button:hover {
+  cursor: pointer;
+}

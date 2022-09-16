@@ -1,0 +1,41 @@
+/* Es el todo */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: red;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+.padre {
+  display: flex;
+  /* Esto va a respetar el ancho de la pantalla y cuando
+  un element ocupe mas de lo dado lo mandara a la siguiente
+  fila */
+  height: 100vh;
+  flex-wrap: wrap;
+  /* justify-content: Permite alinear elementos de lado horizontal */
+  /* flex-start: izquerda */
+  /* center: medio */
+  /* flex-end: derecha */
+  /* space-between: mando los elemenos de extremo a extremo */
+  /* space-around:se parecea a space-between pero da unos margentes
+  al inicio y al final  */
+  /* space-evenly: pero los spacios entre elementos son iguales */
+  justify-content: space-between;
+  /* align-items: Es la propiedad de flex que permite alinear elementos
+  veticalmente y comparte todas las propiedas de justify-content */
+  align-items: center;
+}
+
+.hijo {
+  width: 25%;
+  height: 100px;
+  border: solid 1px green;
+  background-color: #fff;
+}
