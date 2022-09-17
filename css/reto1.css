@@ -4,20 +4,9 @@
   box-sizing: border-box;
 }
 
+/* Mobile first */
 body {
   background-color: blue;
-}
-
-@media (min-width: 600px) {
-  body {
-    background-color: hsl(30, 38%, 92%);
-  }
-}
-
-@media (min-width: 900px) {
-  body {
-    background-color: red;
-  }
 }
 
 .container {
@@ -46,6 +35,29 @@ body {
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   padding: 20px;
+}
+
+.sub-title {
+  font-family: "Montserrat", sans-serif;
+  color: hsl(228, 12%, 48%);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 4px;
+}
+
+.title {
+  color: hsl(212, 21%, 14%);
+  font-family: "Fraunces", sans-serif;
+  margin-top: 15px;
+}
+
+.text-content {
+  font-family: "Montserrat", sans-serif;
+  color: hsl(228, 12%, 48%);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .content-price {
@@ -86,7 +98,11 @@ button:hover {
   cursor: pointer;
 }
 
+/* MD */
 @media (min-width: 600px) {
+  body {
+    background-color: hsl(30, 38%, 92%);
+  }
   .container {
     flex-direction: row;
   }
@@ -113,7 +129,11 @@ button:hover {
   }
 }
 
+/* LG */
 @media (min-width: 900px) {
+  body {
+    background-color: red;
+  }
   .left-image {
     background-size: cover;
     background-position: 50% 25%;
@@ -156,26 +176,3 @@ button:hover {
   }
 }
 
-
-.sub-title {
-  font-family: "Montserrat", sans-serif;
-  color: hsl(228, 12%, 48%);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 4px;
-}
-
-.title {
-  color: hsl(212, 21%, 14%);
-  font-family: "Fraunces", sans-serif;
-  margin-top: 15px;
-}
-
-.text-content {
-  font-family: "Montserrat", sans-serif;
-  color: hsl(228, 12%, 48%);
-  margin-top: 15px;
-  margin-bottom: 15px;
-  font-size: 13px;
-  font-weight: 500;
-}
