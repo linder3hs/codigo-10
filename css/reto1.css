@@ -79,6 +79,10 @@ body {
   text-decoration: line-through;
 }
 
+.only-lg {
+  display: none;
+}
+
 button {
   margin-top: 20px;
   width: 100%;
@@ -156,13 +160,13 @@ button:hover {
   }
 
   button {
-    margin-top: 30px;
-    padding: 20px;
+    margin-top: 10px;
+    padding: 10px;
     font-size: 20px;
   }
 
   .content-price {
-    margin-top: 30px;
+    margin-top: 10px;
   }
   
   .offert-price {
@@ -173,6 +177,19 @@ button:hover {
   .real-price {
     margin-left: 10px;
     font-size: 20px;
+  }
+
+  .only-lg {
+    display: block;
+  }
+
+  button:nth-of-type(1) {
+    background-color: #fff;
+    color:hsl(158, 36%, 37%);
+    border: 1px solid hsl(158, 36%, 37%);
+  }
+  button:nth-of-type(1) > img {
+    display: none;
   }
 }
 
