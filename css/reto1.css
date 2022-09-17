@@ -10,6 +10,7 @@ body {
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -17,22 +18,28 @@ body {
 
 .left-image {
   background: url("../images/image-product-desktop.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 400px;
+  background-position: 0% 30%;
+  height: 200px;
   width: 300px;
   background-color: #fff;
   border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .content {
-  height: 400px;
-  width: 250px;
+  width: 300px;
   background-color: #fff;
-  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   padding: 20px;
+}
+.title {
+  color: hsl(212, 21%, 14%);
+  font-family: "Fraunces", sans-serif;
+  margin-top: 10px;
+  font-size: 1.5em;
 }
 
 .sub-title {
@@ -41,12 +48,6 @@ body {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 4px;
-}
-
-.title {
-  color: hsl(212, 21%, 14%);
-  font-family: "Fraunces", sans-serif;
-  margin-top: 15px;
 }
 
 .text-content {
@@ -95,3 +96,75 @@ button {
 button:hover {
   cursor: pointer;
 }
+
+@media (min-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+  .left-image {
+    background: url("../images/image-product-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    height: 400px;
+    width: 200px;
+    background-color: #fff;
+    border-radius: 0px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .content {
+    height: 400px;
+    width: 250px;
+    background-color: #fff;
+    border-radius: 0px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 20px;
+  }
+  .title {
+    margin-top: 15px;
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+  .left-image {
+    background: url("../images/image-product-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 266px;
+    transform: scale(1.5);
+    background-color: #fff;
+    border-radius: 0px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .content {
+    height: auto;
+    width: 400px;
+    margin-left: 67px;
+    background-color: #fff;
+    border-radius: 0px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 82px 40px;
+  }
+  .title {
+    margin-top: 25px;
+    font-size: 3em;
+  }
+  button {
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 20px;
+  }
+}
+
+
