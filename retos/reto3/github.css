@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Comic Neue", cursive;
+  background-color: #141c2f;
+  color: #fff;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  border: solid #fff;
+  width: 600px;
+}
+
+.section-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.5em;
+}
+
+.btn-mode {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.7em;
+  letter-spacing: 5px;
+}
