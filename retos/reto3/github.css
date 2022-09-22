@@ -38,6 +38,7 @@ body {
   font-weight: 600;
   font-size: 0.7em;
   letter-spacing: 5px;
+  font-family: "Comic Neue", cursive;
 }
 
 .search-container {
@@ -77,4 +78,61 @@ body {
   width: 100%;
   font-size: 16px;
   font-family: "Comic Neue", cursive;
+}
+
+.information-container {
+  display: flex;
+  padding: 40px;
+  gap: 40px;
+  background-color: #202a49;
+  margin-top: 30px;
+  border-radius: 12px;
+}
+
+.information-container img {
+  border-radius: 50%;
+}
+
+.description-container {
+  flex-grow: 2;
+}
+
+.user-date-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-date-container p {
+  font-size: 0.8em;
+}
+
+.user-bio-container {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user-bio-container p:nth-child(1) {
+  color: #0279fd;
+}
+
+.card-information {
+  background-color: #141c2f;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-container div p {
+  margin-bottom: 20px;
 }
