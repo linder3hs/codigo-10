@@ -15,7 +15,6 @@ body {
 }
 
 .container {
-  border: solid #fff;
   width: 600px;
 }
 
@@ -39,4 +38,43 @@ body {
   font-weight: 600;
   font-size: 0.7em;
   letter-spacing: 5px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  background-color: #202a49;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.input-container {
+  flex-grow: 2;
+}
+
+.input-search {
+  background-color: transparent;
+  border: none;
+  margin-left: 15px;
+  font-size: 20px;
+  width: 85%;
+  color: #fff;
+  font-family: "Comic Neue", cursive;
+}
+
+.input-search:focus {
+  outline: none;
+}
+
+.btn-search {
+  background-color: #0279fd;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  width: 100%;
+  font-size: 16px;
+  font-family: "Comic Neue", cursive;
 }
