@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  box-shadow: -2px -4px 16px 0px rgba(201, 201, 201, 0.75);
+  border-radius: 8px;
+}
+
+img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.description {
+  padding: 10px;
+}
+
+h4 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.card:hover {
+  transform: scale(1.2);
+  transition: 0.3s all;
+}
+
+/* 
+img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+img:hover {
+  transform: permite manipular un elemento en los ejes x,y,z
+  deg = grados
+  transform: rotate(360deg);
+  transform: rotate3d(1, 1, 1, 180deg);
+  transform: scale(1);
+  transition: 1.2s all;
+} */
+
+/* Burguer menu */
+.menu {
+  height: 60px;
+  width: 120px;
+}
+
+span {
+  display: block;
+  height: 6px;
+  width: 50px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  background-color: rgb(54, 54, 54);
+}
+/* 
+.line-one {
+  background-color: red;
+}
+
+.line-two {
+  background-color: black;
+}
+
+.line-three {
+  background-color: green;
+} */
+
+.menu:hover .line-one {
+  transform: rotate(405deg);
+  margin-top: 25px;
+  width: 50px;
+  transition: 0.2s all;
+}
+
+.menu:hover .line-three {
+  transform: rotate(-405deg);
+  margin-top: -16px;
+  width: 50px;
+  transition: 0.2s all;
+}
+
+.menu:hover .line-two {
+  display: none;
+}
