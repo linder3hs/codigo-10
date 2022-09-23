@@ -5,16 +5,18 @@
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: hsl(210, 60%, 98%)
+    background-color: hsl(210, 60%, 98%);
 }
 
 .grid-container {
     height: 100vh;
-    width: 100%;
     background-color: hsl(0, 0%, 100%);
     max-width: 600px;
     margin: 0px auto;
     padding: 20px;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
 @media (min-width: 600px) {
@@ -47,4 +49,18 @@ body {
 .header .control:hover {
     color: hsl(219, 85%, 26%);
     text-decoration: none;
+}
+
+.main {
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 20px;
+}
+
+.main .card {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: hsl(210, 60%, 98%)
 }
