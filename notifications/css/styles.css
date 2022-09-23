@@ -24,3 +24,27 @@ body {
         padding: 30px;
     }
 }
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.header .badge {
+    font-size: 0.75em;
+    padding: 2px 12px;
+    margin: 0px 12px;
+    background-color: hsl(219, 85%, 26%);
+    color:hsl(0, 0%, 100%);
+    border-radius: 6px;
+}
+
+.header .control {
+    text-align: right;
+    color: hsl(219, 14%, 63%);
+}
+.header .control:hover {
+    color: hsl(219, 85%, 26%);
+    text-decoration: none;
+}
