@@ -35,7 +35,7 @@ The designs were created to the following widths:
 
 ### Theme 2
 
-#### Backgrounds
+### Backgrounds
 
 - Light gray (main background): hsl(0, 0%, 90%)
 - Grayish red (toggle background, keypad background): hsl(0, 5%, 81%)
