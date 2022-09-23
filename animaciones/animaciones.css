@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(21, 21, 21);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+/* **Animemos al p */
+p {
+  /* *Parte de una animacion */
+  /* ?tiempo
+   ! 4s = 4 segundos
+   ! 13s = 13 segundos
+   * El tiempo de una animacion
+   * puede ser en segundos(s) o milisegundos(ms)
+   */
+  animation-duration: 4s;
+  /* * Nombre de la animacion */
+  animation-name: primera-animacion;
+  /* Este propiedad va a permite poner el numero de
+  veces que queramos que se haga la animacion */
+  /* 
+  Ejemplo  animation-iteration-count: 4 
+  Esto se hara 4 veces
+
+  Como hacemos para que sea infinito, para ellos
+  debemos usar el valor infinite
+  Esto hara que se repita de forma infinita
+  */
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/** Tenemos que enlazar nuestra animacion 
+** con nuestro keyframes y esto se da por el 
+** nombre */
+@keyframes primera-animacion {
+  /** Lo que esta dentro de nuestro keyframes
+  ** se llaman fotogramas */
+
+  /*!El inicio de la animacion  */
+  from {
+    margin-left: 100%;
+    /* margin-top: 40%; */
+  }
+
+  /*! Es el final de la animacion */
+  to {
+    margin-right: 100%;
+    color: red;
+    font-size: 30px;
+  }
+}
+
+h1 {
+  font-size: 65px;
+  color: #fff641;
+  font-family: "Arial Black", Gadget, sans-serif;
+  text-shadow: 0px 0px 0 rgb(-3, 109, 245), -1px 0px 0 rgb(-12, 100, 236),
+    -2px 0px 0 rgb(-22, 90, 226), -3px 0px 0 rgb(-31, 81, 217),
+    -4px 0px 0 rgb(-41, 71, 207), -5px 0px 0 rgb(-50, 62, 198),
+    -6px 0px 0 rgb(-60, 52, 188), -7px 0px 0 rgb(-69, 43, 179),
+    -8px 0px 0 rgb(-79, 33, 169), -9px 0px 0 rgb(-88, 24, 160),
+    -10px 0px 0 rgb(-98, 14, 150), -11px 0px 0 rgb(-107, 5, 141),
+    -12px 0px 0 rgb(-117, -5, 131), -13px 0px 0 rgb(-126, -14, 122),
+    -14px 0px 0 rgb(-136, -24, 112), -15px 0px 0 rgb(-145, -33, 103),
+    -16px 0px 0 rgb(-155, -43, 93), -17px 0px 0 rgb(-165, -53, 83),
+    -18px 0px 17px rgba(233, 240, 24, 0.6),
+    -18px 0px 1px rgba(233, 240, 24, 0.5), 0px 0px 17px rgba(233, 240, 24, 0.2);
+  animation-duration: 6s;
+  animation-name: screen-saver;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes screen-saver {
+  from {
+    margin-left: 100%;
+  }
+
+  to {
+    margin-right: 100%;
+  }
+
+  /* porcentajes de fotogramas */
+  10% {
+    margin-top: 500px;
+  }
+
+  30% {
+    margin-top: -500px;
+  }
+
+  50% {
+    margin-top: 500px;
+  }
+
+  70% {
+    margin-top: -500px;
+  }
+
+  90% {
+    margin-top: 500px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}

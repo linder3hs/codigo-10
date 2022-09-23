@@ -1,38 +1,19 @@
 <html>
   <head>
     <title>Inicio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Poppins -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Noto Sans JP -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Dancing -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
 
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <div style="width: 800px; margin: 10px auto">
+    <div style="margin: 0px auto; padding: 0;">
       <header style="font-size: 20px">
         <h1>Apple.com</h1>
         <p style="text-align: center">Productos top</p>
       </header>
       <main>
+
         <div id="div_temas">
-          <h4>Temas</h4>
+          <h4>Menu</h4>
           <ul>
             <li>
               <a href="./formulario.html">Formularios</a>
@@ -45,78 +26,66 @@
             </li>
           </ul>
         </div>
-        <table>
-          <tr>
-            <td>
-              <div class="product_cell celular">
-                <h2>iPhone 13</h2>
-                <h3 class="price">729</h3>
-                <img
-                  width="200px"
-                  src="https://images.unsplash.com/photo-1632633173522-47456de71b76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
-                  alt="Foto de iPhone 13 color silver"
-                />
-              </div>
-            </td>
-            <td>
-              <div class="product_cell laptop">
-                <h2>Macbook Pro</h2>
-                <h3 class="price">1299</h3>
-                <img
-                  width="200px"
-                  src="https://images.unsplash.com/photo-1615750185825-fc85c6aba18d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                  alt="Foto de macbook pro abierta"
-                />
-              </div>
-            </td>
-            <td>
-              <div class="product_cell audifono">
-                <h2>Airpods Pro</h2>
-                <h3>$ 249</h3>
-                <img
-                  width="200px"
-                  src="https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                  alt="Foto de airpods pro"
-                />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="product_cell celular">
-                <h2>iPhone 14</h2>
-                <h3>$ 879</h3>
-                <img
-                  width="200px"
-                  src="https://images.unsplash.com/photo-1653921167679-7676ed531a58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80"
-                  alt="Foto de iPhone 13 color silver"
-                />
-              </div>
-            </td>
-            <td>
-              <div class="product_cell laptop">
-                <h2>Macbook Air</h2>
-                <h3>$ 999</h3>
-                <img
-                  width="200px"
-                  src="https://images.unsplash.com/photo-1532198528077-0d9e4ca9bb40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=847&q=80"
-                  alt="Foto de macbook pro abierta"
-                />
-              </div>
-            </td>
-            <td>
-              <div class="product_cell audifono">
-                <h2>Airpods Max</h2>
-                <h3>$ 549</h3>
-                <img
-                  width="200px"
-                  src="https://images.unsplash.com/photo-1625245488600-f03fef636a3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
-                  alt="Foto de airpods pro"
-                />
-              </div>
-            </td>
-          </tr>
-        </table>
+
+
+        <div class="productos">
+
+          <div class="product celular">
+            <h2>iPhone 13</h2>
+            <h3 class="price">729</h3>
+            <img
+              src="https://images.unsplash.com/photo-1632633173522-47456de71b76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
+              alt="Foto de iPhone 13 color silver"
+            />
+          </div>
+
+          <div class="product laptop">
+            <h2>Macbook Pro</h2>
+            <h3 class="price">1299</h3>
+            <img
+              src="https://images.unsplash.com/photo-1615750185825-fc85c6aba18d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+              alt="Foto de macbook pro abierta"
+            />
+          </div>
+
+          <div class="product audifono">
+            <h2>Airpods Pro</h2>
+            <h3>$ 249</h3>
+            <img
+              src="https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+              alt="Foto de airpods pro"
+            />
+          </div>
+
+          <div class="product celular">
+            <h2>iPhone 14</h2>
+            <h3>$ 879</h3>
+            <img
+              src="https://images.unsplash.com/photo-1653921167679-7676ed531a58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80"
+              alt="Foto de iPhone 13 color silver"
+            />
+          </div>
+
+          <div class="product laptop">
+            <h2>Macbook Air</h2>
+            <h3>$ 999</h3>
+            <img
+              src="https://images.unsplash.com/photo-1532198528077-0d9e4ca9bb40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=847&q=80"
+              alt="Foto de macbook pro abierta"
+            />
+          </div>
+          
+          <div class="product audifono">
+            <h2>Airpods Max</h2>
+            <h3>$ 549</h3>
+            <img
+              src="https://images.unsplash.com/photo-1625245488600-f03fef636a3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+              alt="Foto de airpods pro"
+            />
+          </div>
+
+        </div>
+        
         <section>
           <h2>Contacto</h2>
           <div class="div_form">

@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Comic Neue", cursive;
+  background-color: #141c2f;
+  color: #fff;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 600px;
+}
+
+.section-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.5em;
+}
+
+.btn-mode {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.7em;
+  letter-spacing: 5px;
+  font-family: "Comic Neue", cursive;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  background-color: #202a49;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.input-container {
+  flex-grow: 2;
+}
+
+.input-search {
+  background-color: transparent;
+  border: none;
+  margin-left: 15px;
+  font-size: 20px;
+  width: 85%;
+  color: #fff;
+  font-family: "Comic Neue", cursive;
+}
+
+.input-search:focus {
+  outline: none;
+}
+
+.btn-search {
+  background-color: #0279fd;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  width: 100%;
+  font-size: 16px;
+  font-family: "Comic Neue", cursive;
+}
+
+.information-container {
+  display: flex;
+  padding: 40px;
+  gap: 40px;
+  background-color: #202a49;
+  margin-top: 30px;
+  border-radius: 12px;
+}
+
+.information-container img {
+  border-radius: 50%;
+}
+
+.description-container {
+  flex-grow: 2;
+}
+
+.user-date-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-date-container p {
+  font-size: 0.8em;
+}
+
+.user-bio-container {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user-bio-container p:nth-child(1) {
+  color: #0279fd;
+}
+
+.card-information {
+  background-color: #141c2f;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-container div p {
+  margin-bottom: 20px;
+}

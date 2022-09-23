@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./calculadora.css" />
+  </head>
+  <body>
+    <!-- section = div -->
+    <section>
+      <!-- titulo + themes -->
+      <div class="section-title-theme">
+        <h4 class="text-white">calc</h4>
+        <div class="section-theme">
+          <h6 class="text-white">THEME</h6>
+          <div class="section-inputs">
+            <input
+              type="radio"
+              onchange="getColorTheme(this)"
+              value="blue"
+              name="theme"
+              checked
+              class="theme"
+            />
+            <input
+              type="radio"
+              onchange="getColorTheme(this)"
+              value="white"
+              name="theme"
+              class="theme"
+            />
+            <input
+              type="radio"
+              onchange="getColorTheme(this)"
+              value="purple"
+              name="theme"
+              class="theme"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- muestra el resultado -->
+      <div class="section-result">
+        <h1>399,981</h1>
+      </div>
+      <!-- muestra los botones -->
+      <div class="section-buttons">
+        <div>
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button class="btn-blue">DEL</button>
+        </div>
+        <div>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>+</button>
+        </div>
+        <div>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>-</button>
+        </div>
+        <div>
+          <button>.</button>
+          <button>0</button>
+          <button>/</button>
+          <button>x</button>
+        </div>
+        <div>
+          <button class="btn-blue btn-big">RESET</button>
+          <button class="btn-equal btn-big">=</button>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+    // obtener el valor de los input
+    document.documentElement.className = "theme-blue";
+
+    function getColorTheme(input) {
+      // theme-blue
+      // theme-white
+      // theme-purple
+      document.documentElement.className = `theme-${input.value}`;
+    }
+  </script>
+</html>
