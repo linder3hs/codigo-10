@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.theme-blue {
+  /* Esto contiene un valor pero en este caso es un color */
+  --color-primary: hsl(222, 26%, 31%);
+  --secondary-color: hsl(223, 31%, 20%);
+  --extra-color: hsl(224, 36%, 15%);
+  --bg-number-buttons: hsl(28, 16%, 65%);
+  --bg-text-buttons: hsl(221, 14%, 31%);
+  --text-big-color: #fff;
+}
+
+.theme-white {
+  --color-primary: rgb(241, 241, 241);
+  --secondary-color: hsl(223, 31%, 20%);
+  --extra-color: hsl(224, 36%, 15%);
+  --bg-number-buttons: hsl(28, 16%, 65%);
+  --bg-text-buttons: hsl(221, 14%, 31%);
+  --text-big-color: #fff;
+}
+
+.theme-purple {
+  --color-primary: rgb(70, 0, 128);
+  --secondary-color: hsl(223, 31%, 20%);
+  --extra-color: hsl(224, 36%, 15%);
+  --bg-number-buttons: hsl(28, 16%, 65%);
+  --bg-text-buttons: hsl(221, 14%, 31%);
+  --text-big-color: #fff;
+}
+
+body {
+  background-color: var(--color-primary);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "League Spartan", sans-serif;
+}
+
+section {
+  width: 600px;
+}
+
+.section-title-theme {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-white {
+  color: var(--text-big-color);
+}
+
+.section-theme {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-inputs {
+  background-color: var(--secondary-color);
+  padding: 2px;
+  border-radius: 20px;
+}
+
+input[type="radio"]:after {
+  content: "";
+  border: 2px solid var(--secondary-color);
+  width: 15px;
+  height: 15px;
+  top: -2px;
+  left: -1px;
+  background-color: var(--secondary-color);
+  position: relative;
+  border-radius: 50%;
+  display: inline-block;
+  visibility: visible;
+}
+
+input[type="radio"]:checked:after {
+  content: "";
+  border: 2px solid var(--secondary-color);
+  width: 15px;
+  height: 15px;
+  top: -2px;
+  left: -1px;
+  background-color: hsl(6, 63%, 50%);
+  position: relative;
+  border-radius: 50%;
+  display: inline-block;
+  visibility: visible;
+}
