@@ -9,6 +9,10 @@ body {
     background-color: red;
 }
 
+h1 {
+    font-size: 1.5em;
+}
+
 .grid-container {
     background-color: white;
     height: 100vh;
@@ -16,7 +20,34 @@ body {
     padding: 20px;
 }
 
+.header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.header .badge {
+    background-color: hsl(219, 85%, 26%);
+    color: white;
+    font-size: 0.7em;
+    padding: 0px 12px;
+    border-radius: 6px;
+}
+
+.header a {
+    justify-self: end;
+    color: hsl(219, 14%, 63%);
+}
+.header a:hover {
+    color: hsl(219, 85%, 26%);
+    text-decoration: none;
+}
+
+
 @media (min-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
     .grid-container {
         margin: 40px auto;
         border-radius: 20px;
