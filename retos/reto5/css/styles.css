@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: red;
+    background-color: hsl(210, 60%, 98%);
 }
 
 h1 {
@@ -30,7 +30,6 @@ h1 {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    background-color: blue;
     grid-area: header;
 }
 
@@ -52,7 +51,6 @@ h1 {
 }
 
 .main {
-    background-color: green;
     grid-area: main;
     display: grid;
     align-content: flex-start;
@@ -61,13 +59,10 @@ h1 {
 
 .main .card {
     height: auto;
-    background-color: brown;
-    border-radius: 10px;
     padding: 10px;
     display: grid;
     grid-template-areas:
-    "avatar content"
-    ". time";
+    "avatar content";
     grid-template-columns: 15% auto;
     gap: 10px;
 }
@@ -83,9 +78,23 @@ h1 {
 .main .card .content {
     grid-area: 'content';
 }
+.main .card .content .text {
+    color:hsl(219, 14%, 63%)
+}
 .main .card .time {
     grid-area: time;
+    color:hsl(219, 14%, 63%);
 }
+
+.unread {
+    background-color: hsl(210, 60%, 98%);
+    border-radius: 10px;
+}
+.unread .text::after {
+    content: ' •';
+    color: hsl(1, 90%, 64%);
+}
+
 
 @media (min-width: 600px) {
     h1 {
