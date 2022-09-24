@@ -17,6 +17,12 @@ body {
 
     display: grid;
     grid-template-rows: auto 1fr;
+
+    /* Areas */
+    grid-template-areas:
+      "header"
+      "main"
+    ;
 }
 
 @media (min-width: 600px) {
@@ -31,6 +37,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    grid-area: header;
 }
 
 .header .badge {
@@ -57,6 +64,7 @@ body {
     flex-direction: column;
     justify-content: start;
     gap: 20px;
+    grid-area: main;
 }
 
 .main .card {
