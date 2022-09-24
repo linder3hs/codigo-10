@@ -60,10 +60,31 @@ h1 {
 }
 
 .main .card {
-    height: 100px;
+    height: auto;
     background-color: brown;
     border-radius: 10px;
     padding: 10px;
+    display: grid;
+    grid-template-areas:
+    "avatar content"
+    ". time";
+    grid-template-columns: 15% auto;
+    gap: 10px;
+}
+
+.main .card .avatar {
+    grid-area: avatar;
+}
+.main .card .avatar img {
+    display: block;
+    width: 80%;
+    margin: 0px auto;
+}
+.main .card .content {
+    grid-area: 'content';
+}
+.main .card .time {
+    grid-area: time;
 }
 
 @media (min-width: 600px) {
@@ -76,6 +97,10 @@ h1 {
         padding: 30px;
     }
     .main {
+        gap: 20px;
+    }
+    .main .card {
+        padding: 20px;
         gap: 20px;
     }
 }
