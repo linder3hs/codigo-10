@@ -46,3 +46,11 @@ function buscarPersona() {
 	const persona_encontrada = people.find((person) => term === person.name);
 	console.log(persona_encontrada);
 }
+
+// split: first y last name
+// capitalizar: touppercase, tolowecase, len, substr
+
+// Hallar la edad minima
+// Hallar la edad maxima
+// Obtener a una persona al azar (math.random)
+// Porcentaje de hombre y mujeres
