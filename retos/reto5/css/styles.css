@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: hsl(210, 60%, 98%);
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+.grid-container {
+    background-color: white;
+    height: 100vh;
+    max-width: 600px;
+    padding: 20px;
+
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "main";
+    grid-template-rows: 100px auto;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    grid-area: header;
+}
+
+.header .badge {
+    background-color: hsl(219, 85%, 26%);
+    color: white;
+    font-size: 0.7em;
+    padding: 0px 12px;
+    border-radius: 6px;
+}
+
+.header a {
+    justify-self: end;
+    color: hsl(219, 14%, 63%);
+}
+.header a:hover {
+    color: hsl(219, 85%, 26%);
+    text-decoration: none;
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+    align-content: flex-start;
+    gap: 10px;
+}
+
+.main .card {
+    height: auto;
+    padding: 10px;
+    display: grid;
+    grid-template-areas:
+    "avatar content";
+    grid-template-columns: 15% auto;
+    gap: 10px;
+}
+
+.main .card .avatar {
+    grid-area: avatar;
+}
+.main .card .avatar img {
+    display: block;
+    width: 80%;
+    margin: 0px auto;
+}
+.main .card .content {
+    grid-area: 'content';
+}
+.main .card .content .text {
+    color:hsl(219, 14%, 63%)
+}
+.main .card .time {
+    grid-area: time;
+    color:hsl(219, 14%, 63%);
+}
+
+.unread {
+    background-color: hsl(210, 60%, 98%);
+    border-radius: 10px;
+}
+.unread .text::after {
+    content: ' •';
+    color: hsl(1, 90%, 64%);
+}
+
+
+@media (min-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    .grid-container {
+        margin: 40px auto;
+        border-radius: 20px;
+        padding: 30px;
+    }
+    .main {
+        gap: 20px;
+    }
+    .main .card {
+        padding: 20px;
+        gap: 20px;
+    }
+}
