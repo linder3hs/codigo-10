@@ -1,3 +1,4 @@
+// Arreglo para guardar infinitas peronas:
 const personas = [];
 
 function crearPersona() {
@@ -131,5 +132,16 @@ function crearPersonasClass() {
 	personas.push(persona2);
 	personas.push(persona3);
 
+	console.log(personas);
+}
+
+function crearPersonasCustom() {
+	const nombre = prompt("Nombre: ");
+	const edad = prompt("Edad: ");
+	const genero = prompt("Genero: ");
+	const talla = prompt("Talla: ");
+	const persona = new Person(nombre, edad, genero, talla);
+	// Agregar a la nueva persona al arreglo "personas":
+	personas.push(persona);
 	console.log(personas);
 }
