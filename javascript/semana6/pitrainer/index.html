@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Trainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Pi Trainer</h1>
+        <hr>
+        <div class="setup">
+            <h2>Setup:</h2>
+            <button id="button_start" class="btn" onclick="startGame();">Start</button>
+        </div>
+        <hr>
+        <div id="game">
+            <input type="tel" pattern="[0-9]*" novalidate id="pi_decimals">
+            <p id="result_decimals">3.</p>
+            <p id="result_score"></p>
+            <button id="button_restart" class="btn" onclick="restartGame();">Restart</button>
+        </div>
+    </div>
+</body>
+<script src="./app.js"></script>
+</html>
