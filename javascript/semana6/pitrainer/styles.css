@@ -1,0 +1,9 @@
+.container {
+    font-size: 40px;
+}
+
+.big {
+    font-size: 80px !important;
+    color: red;
+    background-color: blue;
+}
