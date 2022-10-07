@@ -22,12 +22,14 @@ const result_score = document.getElementById("result_score");
 function renderLives() {
   // cada vez que error sea true entonces vamos a disminuir un corazon
   live_qty.innerHTML = "";
+  // for (let i = 0; i < 4; i++)
   for (let i = 0; i < 5 - errors; i++) {
     // live_qty.innerHTML = live_qty.innerHTML + "❤️";
     live_qty.innerHTML += "❤️";
   }
 }
 
+// Cuando llamamos por primera a la funcion errors = 0
 renderLives();
 
 // keydown -> keypress -> .value -> keyup
@@ -35,6 +37,26 @@ input_decimals.addEventListener("keyup", function () {
   this.value = "";
   this.focus();
 });
+
+function getSixCharacters() {
+  // que funcion converite un string a un array split
+  // const numeros = pi_decimals.split(""); // string vacio
+  // retorna la lista de numeros hasta la position postion + 5 // que son los 6 numeros despues que me equivoque
+  // 14159265358979;
+  // suponganmos que solo acerte hasta 3.1415
+  // caso1 = 3.1415
+  // position = 4
+  // quiero los numeros donde el index sea <= position + 5 // 9
+  // newNumeros = 1415926535 // aca se cumple la condicon y ya no imprime mas
+  // const newNumeros = numeros.filter((number, index) => index <= position + 5);
+  // result_decimals.innerHTML = "3." + newNumeros.join("");
+  result_decimals.innerHTML =
+    "3." +
+    pi_decimals
+      .split("")
+      .filter((number, index) => index <= position + 5)
+      .join("");
+}
 
 input_decimals.addEventListener("keydown", function (evt) {
   if (evt.code == "Enter") return;
@@ -59,6 +81,8 @@ input_decimals.addEventListener("keydown", function (evt) {
     renderLives();
     if (errors === 5) {
       input_decimals.disabled = true;
+      // debemos llamar a los 6 numeros para aprender
+      getSixCharacters();
     }
   }
   // Volver el texto a negro:
