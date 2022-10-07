@@ -43,18 +43,12 @@ saludar("Juan");
 
 // Ahora vamos a ver funcion que usan return
 const edadMinima = 18;
+
 function entrarAFiesta(edad) {
-  // Si es es mayor a 18 podrar entrar si no no entra
-  let resultado = false;
-
-  if (edad >= edadMinima) {
-    // Este return significa que si la condicion se cumple el valor que devuelva (retorne) sera true
-    // cuando se ejecuta el return la funcion termina
-    resultado = true;
-  }
-
-  return resultado;
+  return edad >= edadMinima;
 }
 
-const validacionDeEdad = entrarAFiesta(20); // false
+const entrarAFiesta = (edad) => edad >= edadMinima;
+
+const validacionDeEdad = entrarAFiesta(20);
 console.log("Vaidacion de edad", validacionDeEdad);
