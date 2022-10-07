@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Pi Trainer</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>Pi Trainer</h1>
-        <hr>
-        <div id="setup">
-            <h2>Setup:</h2>
-            <button class="btn" id="button_start">Start</button>
-        </div>
-        <hr>
-        <div id="game">
-            <input type="tel" pattern="[0-9]*" novalidate id="input_decimals">
-            <p id="result_decimals">3.</p>
-            <p id="result_score"></p>
-        </div>
-        
+      <h1>Pi Trainer</h1>
+      <hr />
+      <div id="setup">
+        <p class="live_qty"></p>
+        <h2>Setup:</h2>
+        <button class="btn" id="button_start">Start</button>
+      </div>
+      <hr />
+      <div id="game">
+        <input type="tel" pattern="[0-9]*" novalidate id="input_decimals" />
+        <p id="result_decimals">3.</p>
+        <p id="result_score"></p>
+      </div>
     </div>
-</body>
-<script src="app.js"></script>
+  </body>
+  <script src="app.js"></script>
 </html>
