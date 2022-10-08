@@ -1,4 +1,5 @@
 const btnGetPokemons = document.querySelector("#get-pokemons");
+const container = document.querySelector(".container");
 
 const urlPokemons = "https://pokeapi.co/api/v2/pokemon";
 
@@ -18,5 +19,23 @@ btnGetPokemons.onclick = async function () {
   // Siempre debemos convertir nuestros a un objeto
   // para que JS lo pueda entender
   const data = await respuesta.json();
-  console.log(data.results);
+  readPokemons(data.results);
+  // Reto1: Con la informacion que tenemos en data.results hagan una galeria
+  // de pokemones parecida a la de peliculas
 };
+
+function readPokemons(pokemons) {
+  container.innerHTML = "";
+  pokemons.forEach((pokemon, index) => {
+    container.innerHTML += `<div class="card">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
+          index + 1
+        }.png" alt="" />
+        <h4>${pokemon.name}</h4>
+        <p>
+          ${pokemon.url}
+        </p>
+      </div>
+    `;
+  });
+}
