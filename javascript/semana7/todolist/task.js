@@ -18,26 +18,33 @@
 //! Para poder usar import de este. archivo tenemos que decir
 //! que nuestra clase sea exportable, es decir que pueda ser
 //! usada desde otro archivo
-export class Task {
+class Task {
   // Estos parametros
-  constructor(name, date, status) {
+  constructor(id, name, date, status) {
+    this._id = id;
     this._name = name;
     this._date = date;
     this._status = status;
   }
 
+  static destroyRender(id) {
+    const element = document.querySelector(`#task-${id}`);
+    element.remove();
+  }
+
   // Es una clase no hace falta usar la palabra function
   render() {
     return `
-      <div class="item__task">
+      <div id="task-${this._id}" class="item__task">
         <input type="checkbox" />
         <h6>${this._name}</h6>
         <button>
           <img src="./images/edit.png" width="15" alt="" />
         </button>
-        <button>
+        <button onclick="destroy(${this._id})">
           <img src="./images/delete.png" width="15" alt="" />
         </button>
-      </div>`;
+      </div>
+      `;
   }
 }

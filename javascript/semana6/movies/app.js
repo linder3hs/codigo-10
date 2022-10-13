@@ -14,6 +14,10 @@ btnBuscar.onclick = () => {
   readMovies(moviesFiltradas);
 };
 
+function test() {
+  console.log("movies");
+}
+
 function readMovies(listPeliculas = movies.entries) {
   container.innerHTML = "";
   listPeliculas.forEach((movie, index) => {
@@ -25,6 +29,7 @@ function readMovies(listPeliculas = movies.entries) {
         <p>
           ${movie.description}
         </p>
+        <button onclick="test()">aaaa</button>
       </div>
     `;
   });
