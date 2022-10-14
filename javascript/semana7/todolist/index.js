@@ -45,6 +45,7 @@ function destroy(id) {
     if (oneTask === undefined) return
 
     oneTask._name = newText;
+    oneTask._status = 2;
 
     Task.updateRender(id, newText);
 } */

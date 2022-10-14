@@ -1,0 +1,11 @@
+{
+  "name": "app-node",
+  "version": "1.0.0",
+  "description": "Este es mi primero proyecto en node",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Linder Hassinger",
+  "license": "ISC"
+}
