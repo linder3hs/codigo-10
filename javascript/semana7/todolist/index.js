@@ -2,6 +2,8 @@ const inputTask = document.querySelector(".input__task");
 const btnCreate = document.querySelector(".btn__create");
 const listTask = document.querySelector(".container__list__task");
 
+const url_todoapi = "http://127.0.0.1:4000";
+
 //vamos a crear un arreglo vacio
 let arrayTasks = [];
 
@@ -16,9 +18,35 @@ btnCreate.onclick = function () {
 	}
 
 	const task = new Task(arrayTasks.length + 1, taskText, new Date(), 1);
-	arrayTasks.push(task);
 
-	listTask.innerHTML += task.render();
+	fetch(url_todoapi + "/puerta", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(task),
+	}).then((response) => {
+		if (response.ok) {
+			fetch(url_todoapi + "/tasks")
+				.then((res) => res.json())
+				.then((data_json) => {
+					console.log(data_json.tasks);
+					data_json.tasks.forEach((tarea) => {
+						const objTarea = new Task(
+							tarea._id,
+							tarea._name,
+							tarea._date,
+							tarea._status
+						);
+						listTask.innerHTML += objTarea.render();
+					});
+				});
+		}
+	});
+
+	// arrayTasks.push(task);
+
+	// listTask.innerHTML += task.render();
 
 	inputTask.value = "";
 	inputTask.focus();
