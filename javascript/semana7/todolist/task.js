@@ -18,31 +18,32 @@
 //! Para poder usar import de este. archivo tenemos que decir
 //! que nuestra clase sea exportable, es decir que pueda ser
 //! usada desde otro archivo
+
 class Task {
-    // Estos parametros
-    constructor(id, name, date, status) {
-        this._id = id;
-        this._name = name;
-        this._date = date;
-        this._status = status;
-    }
+	// Estos parametros
+	constructor(id, name, date, status) {
+		this._id = id;
+		this._name = name;
+		this._date = date;
+		this._status = status;
+	}
 
-    static destroyRender(id) {
-        const element = document.querySelector(`#task-${id}`);
-        element.remove();
-    }
+	static destroyRender(id) {
+		const element = document.querySelector(`#task-${id}`);
+		element.remove();
+	}
 
-    static updateRender(id, name) {
-        const texto = document.querySelector(`#task-name-${id}`);
-        // Si quieren cambiar el texto de un elemento pueden usar
-        // * innerText => Antiguo
-        // * textContent => Moderno
-        texto.textContent = name;
-    }
+	static updateRender(id, name) {
+		const texto = document.querySelector(`#task-name-${id}`);
+		// Si quieren cambiar el texto de un elemento pueden usar
+		// * innerText => Antiguo
+		// * textContent => Moderno
+		texto.textContent = name;
+	}
 
-  // Es una clase no hace falta usar la palabra function
-  render() {
-    return `
+	// Es una clase no hace falta usar la palabra function
+	render() {
+		return `
       <div id="task-${this._id}" class="item__task">
         <input type="checkbox" />
         <h6 id="task-name-${this._id}">${this._name}</h6>
@@ -54,5 +55,5 @@ class Task {
         </button>
       </div>
       `;
-  }
+	}
 }
