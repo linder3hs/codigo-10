@@ -14,23 +14,42 @@
     />
   </head>
   <body>
-    <main>
+    <main class="container">
       <div>
         <h1>TODO List</h1>
-        <div class="container__form mt-5">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Ingresa el nombre de una tarea"
-          />
-          <button class="btn btn-success">Crear Tarea</button>
+        <div class="container__form mt-5 row">
+          <div class="col-8">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Ingresa el nombre de una tarea"
+            />
+          </div>
+          <div class="col-4 d-grid">
+            <button class="btn btn-success">Crear Tarea</button>
+          </div>
         </div>
         <div class="container__tasks">
           <div class="task__end">
             <h3>Tarea1</h3>
           </div>
           <div class="task__in__progress">
-            <h3>Tarea2</h3>
+            <div class="row">
+              <div class="col-10">
+                <h3>Tarea2</h3>
+              </div>
+              <div class="col-2">
+                <button class="btn btn-warning">
+                  <img src="./images/edit-2.svg" width="20" alt="" />
+                </button>
+                <button class="btn btn-success">
+                  <img src="./images/check-circle.svg" width="20" alt="" />
+                </button>
+                <button class="btn btn-danger">
+                  <img src="./images/trash-2.svg" width="20" alt="" />
+                </button>
+              </div>
+            </div>
           </div>
           <div class="task__delete">
             <h3>Tarea3</h3>

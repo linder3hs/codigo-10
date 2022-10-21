@@ -5,7 +5,6 @@ body {
 }
 
 main {
-  width: 560px;
   margin: auto;
 }
 
@@ -15,12 +14,9 @@ h1 {
 
 .container__form {
   text-align: center;
-  display: flex;
-  justify-content: space-between;
 }
 .container__form input {
   padding: 10px;
-  width: 320px;
   border-radius: 8px;
   border: 0.5 solid !important;
 }
