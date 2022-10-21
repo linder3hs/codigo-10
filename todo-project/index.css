@@ -1,0 +1,47 @@
+body {
+  background-color: rgb(247, 247, 247);
+  color: rgb(49, 49, 49);
+  font-family: sans-serif;
+}
+
+.container__form {
+  text-align: center;
+}
+.container__form input {
+  padding: 10px;
+  width: 320px;
+  border-radius: 8px;
+  border: 0.5 solid !important;
+}
+.container__form input:hover {
+  border: solid 1px rgb(80, 255, 153);
+}
+.container__form button {
+  background-color: rgb(80, 255, 153);
+  padding: 10px;
+  border: solid rgb(80, 255, 153);
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.container__tasks .task__end {
+  color: #000;
+  background-color: rgb(68, 255, 196);
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.container__tasks .task__in__progress {
+  color: #fff;
+  background-color: rgb(102, 143, 255);
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.container__tasks .task__delete {
+  color: #fff;
+  background-color: rgb(237, 121, 129);
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 20px;
+}/*# sourceMappingURL=index.css.map */

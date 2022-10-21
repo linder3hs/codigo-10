@@ -1,0 +1,59 @@
+// vamos a importar al archivo que contiene nuestras variables
+@import "./variables.scss";
+
+body {
+  background-color: $background-gray-color;
+  color: $text-color;
+  font-family: $font-title;
+}
+
+// Nesting: Es colocal estilos que estan dentro del padre
+
+.container__form {
+  text-align: center;
+
+  input {
+    padding: 10px;
+    width: 320px;
+    border-radius: 8px;
+    border: 0.5 solid !important;
+    // Si queremos aplicar un efecto como el hover no hace falta volver a invocar a la clase
+    // y colocar hover simplemente usado &:hover
+    // ! Nota esto debe estar dentro del elemento
+    &:hover {
+      border: solid 1px $primary-color;
+    }
+  }
+
+  button {
+    background-color: $primary-color;
+    padding: 10px;
+    border: solid $primary-color;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+}
+
+// mixins: Es una funcion de scss la cual nos permite crear bloques de estilos
+// pero estos pueden ser pamaetrizable
+@mixin taskcard($bgcolor: rgb(237, 121, 129), $textcolor: #fff) {
+  color: $textcolor;
+  background-color: $bgcolor;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.container__tasks {
+  .task__end {
+    @include taskcard($bgcolor: rgb(68, 255, 196), $textcolor: #000);
+  }
+
+  .task__in__progress {
+    @include taskcard($bgcolor: rgb(102, 143, 255));
+  }
+
+  .task__delete {
+    @include taskcard;
+  }
+}
