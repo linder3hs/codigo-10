@@ -10,16 +10,7 @@ class TaskCard extends HTMLElement {
   }
 
   attributeChangedCallback(name, _, newvalue) {
-    switch (name) {
-      case "name":
-        this.name = newvalue;
-        break;
-      case "status":
-        this.status = newvalue;
-        break;
-      default:
-        break;
-    }
+    this[name] = newvalue;
   }
 
   connectedCallback() {
