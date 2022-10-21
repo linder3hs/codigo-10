@@ -4,6 +4,15 @@ body {
   font-family: sans-serif;
 }
 
+main {
+  width: 560px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
 .container__form {
   text-align: center;
 }
@@ -25,7 +34,7 @@ body {
 }
 
 .container__tasks .task__end {
-  color: #000;
+  color: rgb(49, 49, 49);
   background-color: rgb(68, 255, 196);
   padding: 12px;
   border-radius: 8px;

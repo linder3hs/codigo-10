@@ -7,6 +7,15 @@ body {
   font-family: $font-title;
 }
 
+main {
+  width: 560px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
 // Nesting: Es colocal estilos que estan dentro del padre
 
 .container__form {
@@ -46,7 +55,7 @@ body {
 
 .container__tasks {
   .task__end {
-    @include taskcard($bgcolor: rgb(68, 255, 196), $textcolor: #000);
+    @include taskcard($bgcolor: rgb(68, 255, 196), $textcolor: $text-color);
   }
 
   .task__in__progress {
