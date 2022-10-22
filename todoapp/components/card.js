@@ -5,11 +5,18 @@ class Card extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		return ["class", "classname"];
+		return ["class", "classname", "shadow"];
 	}
 
 	attributeChangedCallback(prop, oldvalue, newvalue) {
 		this[prop] = newvalue;
+		if (prop == "shadow") {
+			console.log(newvalue);
+			this.classList.remove("shadow-sm", "shadow", "shadow-lg");
+			if (newvalue == "large") this.classList.add("shadow-lg");
+			if (newvalue == "medium") this.classList.add("shadow");
+			if (newvalue == "small") this.classList.add("shadow-sm");
+		}
 	}
 
 	// Cuando este elemento sea llamado a Renderizarse:
