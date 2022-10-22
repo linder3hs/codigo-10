@@ -2,7 +2,6 @@ class Card extends HTMLElement {
 	constructor() {
 		super();
 		this.class = "card p-3";
-		this.classname = "";
 	}
 
 	static get observedAttributes() {
@@ -16,15 +15,15 @@ class Card extends HTMLElement {
 	// Cuando este elemento sea llamado a Renderizarse:
 	connectedCallback() {
 		if (this.class) {
-			const classList = this.class.split(" ");
-			classList.forEach((xclass) => {
+			const lista_de_clases = this.class.split(" ");
+			lista_de_clases.forEach((xclass) => {
 				this.classList.add(xclass);
 			});
 		}
 
 		if (this.classname) {
-			const classList = this.classname.split(" ");
-			classList.forEach((xclass) => {
+			const lista_de_clases = this.classname.split(" ");
+			lista_de_clases.forEach((xclass) => {
 				this.classList.add(xclass);
 			});
 		}
