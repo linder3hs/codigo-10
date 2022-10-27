@@ -3,7 +3,6 @@ import "./App.css";
 import hotel from "./assets/icons/hotel.png";
 import link from "./assets/icons/link.png";
 import pin from "./assets/icons/pin.png";
-import profile from "./assets/icons/profile.jpeg";
 import search from "./assets/icons/search.png";
 import sun from "./assets/icons/sun.png";
 import twitter from "./assets/icons/twitter.png";
@@ -11,12 +10,23 @@ import twitter from "./assets/icons/twitter.png";
 function App() {
   const [inputText, setInputText] = useState("");
 
+  const [user, setUser] = useState({
+    name: "",
+    created_at: "",
+  });
+
   function handleInputChange(event) {
     setInputText(event.target.value);
   }
 
-  function searchUser() {
-    console.log(inputText);
+  async function searchUser() {
+    try {
+      const response = await fetch(`https://api.github.com/users/${inputText}`);
+      const data = await response.json();
+      setUser(data);
+    } catch (error) {
+      console.log("Error", error);
+    }
   }
 
   return (
@@ -46,51 +56,54 @@ function App() {
       </div>
       <div className="information-container">
         <div className="image-container">
-          <img width="100" src={profile} alt="" />
+          <img width="100" src={user?.avatar_url} alt="" />
         </div>
         <div className="description-container">
           <div className="user-date-container">
-            <h2>The Octocat</h2>
-            <p>Joined 25 Jun 2011</p>
+            {/* Solo actua si es que name existe en user */}
+            <h2>{user.name}</h2>
+            {/* Solo actua si es que created_at existe en user */}
+            {/* Es para prevenir que un atributo no exista en un objeto */}
+            <p>{user.created_at}</p>
           </div>
           <div className="user-bio-container">
-            <p>@octocat</p>
-            <p>This profile has no bio</p>
+            <p>@{user?.login}</p>
+            <p>{user?.bio}</p>
           </div>
           <div className="card-information">
             <div>
               <h5>Repos</h5>
-              <h2>8</h2>
+              <h2>{user?.public_repos}</h2>
             </div>
             <div>
               <h5>Followers</h5>
-              <h2>3938</h2>
+              <h2>{user?.followers}</h2>
             </div>
             <div>
               <h5>Following</h5>
-              <h2>9</h2>
+              <h2>{user?.following}</h2>
             </div>
           </div>
           <div className="info-container">
             <div>
               <p>
                 <img width="15" src={pin} alt="" />
-                &nbsp;San Francisco
+                &nbsp;{user?.location}
               </p>
               <p>
                 <img width="15" src={link} alt="" />
-                &nbsp;https://github.blog
+                &nbsp;{user?.blog}
               </p>
             </div>
             <div>
               <p>
                 <img width="15" src={twitter} alt="" />
-                &nbsp;Not avible
+                &nbsp;{user?.twitter_username}
               </p>
 
               <p>
                 <img width="15" src={hotel} alt="" />
-                &nbsp;@linder3hs
+                &nbsp;{user?.company}
               </p>
             </div>
           </div>
