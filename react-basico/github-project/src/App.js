@@ -10,10 +10,7 @@ import twitter from "./assets/icons/twitter.png";
 function App() {
   const [inputText, setInputText] = useState("");
 
-  const [user, setUser] = useState({
-    name: "",
-    created_at: "",
-  });
+  const [user, setUser] = useState(null);
 
   function handleInputChange(event) {
     setInputText(event.target.value);
@@ -54,61 +51,64 @@ function App() {
           </button>
         </div>
       </div>
-      <div className="information-container">
-        <div className="image-container">
-          <img width="100" src={user?.avatar_url} alt="" />
-        </div>
-        <div className="description-container">
-          <div className="user-date-container">
-            {/* Solo actua si es que name existe en user */}
-            <h2>{user.name}</h2>
-            {/* Solo actua si es que created_at existe en user */}
-            {/* Es para prevenir que un atributo no exista en un objeto */}
-            <p>{user.created_at}</p>
+      {/* aca podemos hacer una validacion donde digamos que el div que sigue exista siempre y cuando user tengo datos */}
+      {user && (
+        <div className="information-container">
+          <div className="image-container">
+            <img width="100" src={user?.avatar_url} alt="" />
           </div>
-          <div className="user-bio-container">
-            <p>@{user?.login}</p>
-            <p>{user?.bio}</p>
-          </div>
-          <div className="card-information">
-            <div>
-              <h5>Repos</h5>
-              <h2>{user?.public_repos}</h2>
+          <div className="description-container">
+            <div className="user-date-container">
+              {/* Solo actua si es que name existe en user */}
+              <h2>{user.name}</h2>
+              {/* Solo actua si es que created_at existe en user */}
+              {/* Es para prevenir que un atributo no exista en un objeto */}
+              <p>{user.created_at}</p>
             </div>
-            <div>
-              <h5>Followers</h5>
-              <h2>{user?.followers}</h2>
+            <div className="user-bio-container">
+              <p>@{user?.login}</p>
+              <p>{user?.bio}</p>
             </div>
-            <div>
-              <h5>Following</h5>
-              <h2>{user?.following}</h2>
+            <div className="card-information">
+              <div>
+                <h5>Repos</h5>
+                <h2>{user?.public_repos}</h2>
+              </div>
+              <div>
+                <h5>Followers</h5>
+                <h2>{user?.followers}</h2>
+              </div>
+              <div>
+                <h5>Following</h5>
+                <h2>{user?.following}</h2>
+              </div>
             </div>
-          </div>
-          <div className="info-container">
-            <div>
-              <p>
-                <img width="15" src={pin} alt="" />
-                &nbsp;{user?.location}
-              </p>
-              <p>
-                <img width="15" src={link} alt="" />
-                &nbsp;{user?.blog}
-              </p>
-            </div>
-            <div>
-              <p>
-                <img width="15" src={twitter} alt="" />
-                &nbsp;{user?.twitter_username}
-              </p>
+            <div className="info-container">
+              <div>
+                <p>
+                  <img width="15" src={pin} alt="" />
+                  &nbsp;{user?.location}
+                </p>
+                <p>
+                  <img width="15" src={link} alt="" />
+                  &nbsp;{user?.blog}
+                </p>
+              </div>
+              <div>
+                <p>
+                  <img width="15" src={twitter} alt="" />
+                  &nbsp;{user?.twitter_username}
+                </p>
 
-              <p>
-                <img width="15" src={hotel} alt="" />
-                &nbsp;{user?.company}
-              </p>
+                <p>
+                  <img width="15" src={hotel} alt="" />
+                  &nbsp;{user?.company}
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
