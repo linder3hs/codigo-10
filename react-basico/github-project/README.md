@@ -11,6 +11,10 @@ npx create-react-app nombre-del-proyecto
 ```
 
 ```bash
+cd nombre-del-proyecto
+```
+
+```bash
 npm start
 ```
 
