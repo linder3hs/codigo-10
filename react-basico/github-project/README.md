@@ -112,3 +112,29 @@ function App() {
   
 }
 ```
+
+## Sweet Alert
+
+Es una libreria que nos permite mostrar alertas en nuestra aplicacion
+
+### Instalacion
+
+```bash
+npm install sweetalert
+```
+
+### Como se usa
+
+```js
+import Swal from "sweetalert2";
+
+Swal.fire("Titulo", "Mensaje", "Tipo");
+```
+
+Tenemos 5 tipos de alertas
+
+- success
+- error
+- warning
+- info
+- question

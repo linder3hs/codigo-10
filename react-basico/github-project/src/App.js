@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Userinformation from "./components/UserInformation";
+import Swal from "sweetalert2";
 import "./App.css";
 import search from "./assets/icons/search.png";
 import sun from "./assets/icons/sun.png";
@@ -17,6 +18,12 @@ function App() {
     try {
       const response = await fetch(`https://api.github.com/users/${inputText}`);
       const data = await response.json();
+
+      if (data.message === "Not Found") {
+        Swal.fire("Error", "El usuario que buscas no existe", "error");
+        return;
+      }
+
       setUser(data);
     } catch (error) {
       console.log("Error", error);
