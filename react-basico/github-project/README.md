@@ -2,13 +2,43 @@
 
 Es una biblioteca de JavaScript para construir interfaces de usuario.
 
+## Como crear un proyecto
+
+Para crear un proyecto de ReactJS, se debe ejecutar el siguiente comando:
+
+```bash
+npx create-react-app nombre-del-proyecto
+```
+
+```bash
+npm start
+```
+
+## Clonando proyecto
+
+Cuando se clona un proyecto de ReactJS, se debe ejecutar el siguiente comando:
+
+```bash
+npm install
+```
+
+Recordemoes que `npm install` va a instalar todas las dependencias que se encuentran en el archivo `package.json`.
+
+Luego de instalar todo recien vamos a poder usar el comando `npm start` para ejecutar el proyecto.
+
 ## Reglas
 
 - Todo componente debe ser una función.
 - Todo compomente debe empezar con *mayuscula*.
 
 ```js
+// Usando function
 function MyCard() {
+  return <div>My Card</div>
+}
+
+// Usando arrow function
+const MyCard = () => {
   return <div>My Card</div>
 }
 ```
@@ -138,3 +168,34 @@ Tenemos 5 tipos de alertas
 - warning
 - info
 - question
+
+## Limpiando proyecto
+
+Cuando usamos el comando `npx create-react-app nombre-del-proyecto` se crean archivo inncesarios
+
+Lista de ellos.
+
+1. setupTests.js ✅
+2. reportWebVitals.js ✅
+3. logo.svg ✅
+4. App.test.js ✅
+5. public/logo192.png ✅
+6. public/logo512.png ✅
+
+Ahora tenemos que tener cuidado luego de borrar estos archivos porque surgiran errores.
+
+Para arreglar el error de webVitas solo debemos borrar la linea de import y el uso de la funcion en el archivo `index.js`
+
+```js
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+```

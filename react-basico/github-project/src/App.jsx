@@ -1,18 +1,18 @@
 import { useState } from "react";
+import HeaderSection from "./components/HeaderSection";
 import Userinformation from "./components/UserInformation";
 import SearchContainer from "./components/SearchContainer";
 import Swal from "sweetalert2";
 import "./App.css";
-import sun from "./assets/icons/sun.png";
 
-function App() {
+const App = () => {
   const [inputText, setInputText] = useState("");
 
   const [user, setUser] = useState(null);
 
-  function handleInputChange(event) {
+  const handleInputChange = (event) => {
     setInputText(event.target.value);
-  }
+  };
 
   async function searchUser() {
     try {
@@ -33,12 +33,7 @@ function App() {
 
   return (
     <div className="container">
-      <div className="section-1">
-        <h4 className="title">devfinder</h4>
-        <button className="btn-mode">
-          LIGHT <img width="20" src={sun} alt="" />
-        </button>
-      </div>
+      <HeaderSection />
       <SearchContainer
         inputText={inputText}
         handleInputChange={handleInputChange}
@@ -48,6 +43,6 @@ function App() {
       {user && <Userinformation user={user} />}
     </div>
   );
-}
+};
 
 export default App;
