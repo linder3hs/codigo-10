@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { useRef } from "react";
 
-function TaskForm() {
-	const [inputTask, setInputTask] = useState("");
+function TaskForm(props) {
+	const { onSubmitFunction } = props;
+	const inputElement = useRef();
 
-	function taskInput(event) {
-		setInputTask(event.target.value); // Todos van a reaccionar
+	function inputKeyPress(event) {
+		if (event.key === "Enter") {
+			addButton();
+		}
 	}
 
 	function addButton() {
-		console.log(inputTask);
+		if (inputElement.current.value === "") return;
+		onSubmitFunction(inputElement.current.value);
+		inputElement.current.value = "";
 	}
 
 	return (
@@ -19,7 +24,8 @@ function TaskForm() {
 					type="text"
 					className="form-control"
 					placeholder="My new task..."
-					onChange={taskInput}
+					ref={inputElement}
+					onKeyPress={inputKeyPress}
 				/>
 				<button
 					className="btn btn-outline-primary"
