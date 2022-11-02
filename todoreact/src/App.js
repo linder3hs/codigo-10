@@ -9,9 +9,7 @@ function App() {
 			text: text,
 			datetime: new Date(),
 		};
-		const listaTemporal = taskList;
-		listaTemporal.push(newTask);
-		setTaskList(listaTemporal);
+		setTaskList([...taskList, newTask]);
 		console.log(taskList);
 	}
 
@@ -23,8 +21,8 @@ function App() {
 				<hr />
 			</div>
 			<div className="mt-5">
-				{taskList.map((task) => (
-					<div>hola</div>
+				{taskList.map((task, index) => (
+					<TaskCard key={index} task={task} />
 				))}
 			</div>
 		</div>

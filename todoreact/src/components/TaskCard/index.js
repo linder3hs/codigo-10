@@ -12,7 +12,9 @@ function TaskCard(props) {
 			</div>
 			<hr className="border border-muted border-1" />
 			<div className="d-flex justify-content-between">
-				<span className="text-muted small">{task.datetime}</span>
+				<span className="text-muted small">
+					{String(task.datetime)}
+				</span>
 				<span>
 					<a className="btn btn-sm btn-outline-secondary py-0 small opacity-50">
 						✎
