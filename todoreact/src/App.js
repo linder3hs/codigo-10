@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { TaskForm, TaskCard } from "./components";
-import { get, post } from "./services";
+import { get, post, update } from "./services";
 
 function App() {
   const [taskList, setTaskList] = useState([]);
@@ -13,6 +13,12 @@ function App() {
   async function addTask(text) {
     const newTask = { name: text, status: 1 };
     await post(newTask);
+    await getTasks();
+  }
+
+  async function updateTask(id) {
+    const body = { status: 2 };
+    await update(id, body);
     await getTasks();
   }
 
@@ -30,7 +36,7 @@ function App() {
       </div>
       <div className="mt-5">
         {taskList.map((task, index) => (
-          <TaskCard key={index} task={task} />
+          <TaskCard key={index} task={task} updateTask={updateTask} />
         ))}
       </div>
     </div>
