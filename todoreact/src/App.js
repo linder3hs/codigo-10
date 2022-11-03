@@ -1,35 +1,19 @@
 import { useState, useEffect } from "react";
 import { TaskForm, TaskCard } from "./components";
+import { get, post } from "./services";
 
 function App() {
   const [taskList, setTaskList] = useState([]);
 
   async function getTasks() {
-    try {
-      const url = "https://6363105c66f75177ea3c9310.mockapi.io/tareas";
-      const response = await fetch(url);
-      const data = await response.json();
-      setTaskList(data);
-    } catch (error) {
-      console.log("Error", error);
-    }
+    const tasks = await get();
+    setTaskList(tasks);
   }
 
   async function addTask(text) {
-    const newTask = JSON.stringify({ name: text, status: 1 });
-    try {
-      const url = "https://6363105c66f75177ea3c9310.mockapi.io/tareas";
-      await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: newTask,
-      });
-      await getTasks();
-    } catch (error) {
-      console.log(error);
-    }
+    const newTask = { name: text, status: 1 };
+    await post(newTask);
+    await getTasks();
   }
 
   useEffect(() => {
