@@ -1,7 +1,8 @@
 import Swal from "sweetalert2";
+import { destroy } from "../../services";
 
 function TaskCard(props) {
-  const { task, updateTask } = props;
+  const { task, updateTask, getTasks } = props;
 
   const statusClass = {
     1: "bg-primary",
@@ -9,16 +10,37 @@ function TaskCard(props) {
     3: "bg-danger",
   };
 
-  async function confirmUpdate() {
+  async function createAlert(text) {
     const res = await Swal.fire({
-      title: "Importante",
-      text: "Estas seguro de confirmar que terminaste esta tarea?",
+      title: "Importante!!!",
+      text,
       showCancelButton: true,
       showConfirmButton: true,
     });
 
-    if (res.isConfirmed) {
-      updateTask(task.id);
+    //ok => true
+    // cancel => false
+    return res.isConfirmed;
+  }
+
+  async function confirmUpdate() {
+    const isConfirmed = await createAlert(
+      "Estas seguro de confirmar que terminaste esta tarea?"
+    );
+
+    if (isConfirmed) {
+      await updateTask(task.id);
+    }
+  }
+
+  async function confirmDestroy() {
+    const isConfirmed = await createAlert(
+      "Esta seguro de hacer esta acción, ya no hay vuelta atrás"
+    );
+
+    if (isConfirmed) {
+      await destroy(task.id);
+      await getTasks();
     }
   }
 
@@ -49,7 +71,10 @@ function TaskCard(props) {
             <button className="btn btn-sm btn-outline-secondary py-0 small opacity-50">
               ✎
             </button>
-            <button className="btn btn-sm btn-outline-danger py-0 small opacity-50 deleteButton">
+            <button
+              onClick={confirmDestroy}
+              className="btn btn-sm btn-outline-danger py-0 small opacity-50 deleteButton"
+            >
               ×
             </button>
           </span>

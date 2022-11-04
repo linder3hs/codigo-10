@@ -36,7 +36,12 @@ function App() {
       </div>
       <div className="mt-5">
         {taskList.map((task, index) => (
-          <TaskCard key={index} task={task} updateTask={updateTask} />
+          <TaskCard
+            key={index}
+            task={task}
+            getTasks={getTasks}
+            updateTask={updateTask}
+          />
         ))}
       </div>
     </div>
