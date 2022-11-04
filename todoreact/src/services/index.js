@@ -4,6 +4,15 @@ const url = "https://6363105c66f75177ea3c9310.mockapi.io/tareas";
 // POST: Crear
 // PUT: Actualizar
 // DELETE: Eliminar
+export const getProfile = async () => {
+  try {
+    const response = await fetch("https://api.github.com/users/linder3hs");
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log("Error", error);
+  }
+};
 
 export const get = async () => {
   try {
