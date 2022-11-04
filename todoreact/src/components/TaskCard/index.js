@@ -46,8 +46,7 @@ function TaskCard(props) {
 	}
 
 	return (
-		<Link
-			to={"/task/" + task.id}
+		<div
 			className={`mt-3 card p-3 mt-3 shadow-sm bg-opacity-10 text-decoration-none ${
 				statusClass[task.status]
 			}`}
@@ -63,13 +62,18 @@ function TaskCard(props) {
 						</button>
 					</span>
 				)}
-				<span>{task.name}</span>
+				<Link
+					to={"/task/" + task.id}
+					className={`text-decoration-none`}
+				>
+					{task.name}
+				</Link>
 			</div>
 			<hr className="border border-muted border-1" />
 			{task.status === 1 && (
 				<div className="d-flex justify-content-between">
 					<span className="text-muted small">
-						{String(task.createdAt)}
+						{String(task.createdAt.toLocaleString())}
 					</span>
 					<span>
 						<button className="btn btn-sm btn-outline-secondary py-0 small opacity-50">
@@ -84,7 +88,7 @@ function TaskCard(props) {
 					</span>
 				</div>
 			)}
-		</Link>
+		</div>
 	);
 }
 

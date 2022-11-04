@@ -1,4 +1,4 @@
-const url = "https://6363105c66f75177ea3c9310.mockapi.io/tareas";
+const url = "https://63659f46046eddf1baf09724.mockapi.io/tasks";
 
 // GET : Listar
 // POST: Crear
@@ -31,6 +31,7 @@ export const getTask = async (id) => {
 		return data;
 	} catch (error) {
 		console.log(error);
+		return false;
 	}
 };
 
