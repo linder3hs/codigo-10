@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { TaskForm, TaskCard } from "../../components";
 import { get, post, update } from "../../services";
 
@@ -30,6 +31,9 @@ function Home() {
   return (
     <div className="container my-5">
       <h1 className="display-3">Todo App</h1>
+      <Link to="/perfil" className="my-3 btn btn-link">
+        Ir a perfil
+      </Link>
       <TaskForm onSubmitFunction={addTask} />
       <div className="text-primary">
         <hr />
