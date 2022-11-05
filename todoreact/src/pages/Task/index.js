@@ -1,4 +1,5 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
+import { TaskDetail } from "../../components";
 
 function Task() {
 	const { id } = useParams();
@@ -10,6 +11,7 @@ function Task() {
 			<a onClick={() => history("/")} className="my-3 btn btn-link">
 				Regresar
 			</a>
+			<TaskDetail task_id={id} />
 		</div>
 	);
 }
