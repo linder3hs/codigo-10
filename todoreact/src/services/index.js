@@ -24,6 +24,17 @@ export const get = async () => {
 	}
 };
 
+export const getById = async (id) => {
+	try {
+		const response = await fetch(url + "/" + id);
+		const data = await response.json();
+		return data;
+	} catch (error) {
+		console.log(error);
+		return null;
+	}
+};
+
 export const post = async (body) => {
 	try {
 		const response = await fetch(url, {
