@@ -38,4 +38,12 @@ export class TaskModel {
 		// get seconds
 		return "Hace " + Math.round(timeDiff) + " seg.";
 	}
+
+	getDateTimeString(date) {
+		return (
+			String(date.toLocaleDateString()) +
+			" " +
+			String(date.toLocaleTimeString())
+		);
+	}
 }

@@ -8,11 +8,14 @@ import { getById } from "../../services";
 function Task() {
 	const { id } = useParams();
 	const history = useNavigate();
-	const [task, setTask] = useState({});
+	const [task, setTask] = useState(new TaskModel());
 
 	async function getDetail() {
 		const taskDetail = await getById(id);
-		if (taskDetail === null) return;
+		console.log(taskDetail);
+		if (taskDetail === null) {
+			history("/");
+		}
 
 		setTask(
 			new TaskModel(
