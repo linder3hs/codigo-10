@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { useParams, useNavigate } from "react-router-dom";
+import { TaskDetail } from "../../components";
 import { TaskModel } from "../../models/TaskModel";
 import { getById } from "../../services";
 
@@ -32,10 +33,11 @@ function Task() {
 
 	return (
 		<div className="container my-5">
-			<h1 className="display-3">Todo App / tarea: {task.name}</h1>
+			<h1 className="display-3">Todo App / tarea {task.id}</h1>
 			<a className="my-3 btn btn-link" onClick={() => history("/")}>
 				Regresar
 			</a>
+			<TaskDetail task={task} />
 		</div>
 	);
 }
