@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
+
 import Swal from "sweetalert2";
-import { destroy } from "../../services";
 
 function TaskCard(props) {
 	const { task, updateTask, getTasks } = props;
@@ -62,7 +63,7 @@ function TaskCard(props) {
 						</button>
 					</span>
 				)}
-				<span>{task.name}</span>
+				<Link to={"/task/" + task.id}>{task.name}</Link>
 			</div>
 			<hr className="border border-muted border-1" />
 			<div className="d-flex justify-content-between">
