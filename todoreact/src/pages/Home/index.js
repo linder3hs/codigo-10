@@ -23,7 +23,6 @@ function Home() {
 
 	async function addTask(text) {
 		const newTask = new TaskModel(null, text);
-		console.log(newTask);
 		await post(newTask);
 		await getTasks();
 	}
