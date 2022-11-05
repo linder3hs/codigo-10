@@ -33,7 +33,7 @@ function TaskCard(props) {
 		);
 
 		if (isConfirmed) {
-			await updateTask(task.id);
+			await updateTask(task.id, "done");
 		}
 	}
 
@@ -43,8 +43,7 @@ function TaskCard(props) {
 		);
 
 		if (isConfirmed) {
-			await destroy(task.id);
-			await getTasks();
+			await updateTask(task.id, "delete");
 		}
 	}
 
@@ -57,7 +56,7 @@ function TaskCard(props) {
 					<span className="me-3">
 						<button
 							onClick={confirmUpdate}
-							className="btn btn-sm btn-outline-primary py-0 small opacity-50 checkButton"
+							className="btn btn-sm btn-outline-primary py-0 small opacity-50"
 						>
 							✓
 						</button>
@@ -66,33 +65,39 @@ function TaskCard(props) {
 				<span>{task.name}</span>
 			</div>
 			<hr className="border border-muted border-1" />
-			{task.deletedAt === null && (
-				<div className="d-flex justify-content-between">
-					<span className="text-muted small">
-						{String(task.createdAt.toLocaleDateString()) +
-							" " +
-							String(task.createdAt.toLocaleTimeString())}
+			<div className="d-flex justify-content-between">
+				<span className="text-muted small">
+					{String(task.timeElapsed(task.createdAt))}
+				</span>
+				{task.doneAt !== null && (
+					<span className="text-success text-bold small">
+						✓&nbsp;
+						{String(task.timeElapsed(task.doneAt))}
 					</span>
-					{task.doneAt !== null && (
-						<span className="text-muted small">
-							{String(task.doneAt.toLocaleDateString()) +
-								" " +
-								String(task.doneAt.toLocaleTimeString())}
-						</span>
-					)}
-					<span>
+				)}
+				{task.deletedAt !== null && (
+					<span className="text-danger small">
+						×&nbsp;
+						{String(task.timeElapsed(task.deletedAt))}
+					</span>
+				)}
+				<span>
+					{task.doneAt === null && task.deletedAt === null && (
 						<button className="btn btn-sm btn-outline-secondary py-0 small opacity-50">
 							✎
 						</button>
+					)}
+
+					{task.deletedAt === null && (
 						<button
 							onClick={confirmDestroy}
-							className="btn btn-sm btn-outline-danger py-0 small opacity-50 deleteButton"
+							className="btn btn-sm btn-outline-danger py-0 small opacity-50"
 						>
 							×
 						</button>
-					</span>
-				</div>
-			)}
+					)}
+				</span>
+			</div>
 		</div>
 	);
 }

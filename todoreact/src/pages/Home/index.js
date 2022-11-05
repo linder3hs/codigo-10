@@ -28,8 +28,9 @@ function Home() {
 		await getTasks();
 	}
 
-	async function updateTask(id) {
-		const body = { doneAt: new Date() };
+	async function updateTask(id, type) {
+		const body =
+			type == "done" ? { doneAt: new Date() } : { deletedAt: new Date() };
 		await update(id, body);
 		await getTasks();
 	}
