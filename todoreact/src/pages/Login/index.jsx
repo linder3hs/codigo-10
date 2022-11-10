@@ -31,6 +31,7 @@ const Login = () => {
     //* Entonces si ambos campos estan llenos vamos a guardarlos en localStorage
     localStorage.setItem("user", JSON.stringify(user));
     localStorage.setItem("datos", "10");
+    validateIsLogged();
   };
 
   const validateIsLogged = () => {
