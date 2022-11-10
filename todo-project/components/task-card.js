@@ -41,7 +41,6 @@ class TaskCard extends HTMLElement {
             </div>`
                 : ""
             }
-            
           </div>
         </div>`;
   }
