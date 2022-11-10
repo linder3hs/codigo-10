@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./index.css";
 
@@ -7,6 +8,8 @@ const Login = () => {
     email: "",
     password: "",
   });
+
+  const history = useNavigate();
 
   const handleInputChange = (e) => {
     setUser({
@@ -25,7 +28,23 @@ const Login = () => {
       });
       return;
     }
+    //* Entonces si ambos campos estan llenos vamos a guardarlos en localStorage
+    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("datos", "10");
   };
+
+  const validateIsLogged = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user);
+    if (!user) {
+      // no deberiamos enviarlo a la vista tareas?
+      history("/");
+    }
+  };
+
+  useEffect(() => {
+    validateIsLogged();
+  }, []);
 
   return (
     <div className="bg__login">

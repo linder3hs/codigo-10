@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# LocalStorage
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Es una funcion de JS la cual nos permite guardar informacion en memeoria del navegador, es decir, en el disco duro del usuario.
 
-## Available Scripts
+## Como funciona?
 
-In the project directory, you can run:
+LocalStorage tiene dos metodos principales:
 
-### `npm start`
+- setItem: Guarda un valor en el LocalStorage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Ejemplo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```js
+// 'nombre' => key
+// 'Juan' => value
+localStorage.setItem('nombre', 'Juan');
+```
 
-### `npm test`
+Podemos guardar un objeto en el LocalStorage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```js
+const persona = {
+  nombre: 'Juan',
+  edad: 30
+};
 
-### `npm run build`
+localStorage.setItem('persona', JSON.stringify(persona));
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- getItem: Obtiene un valor del LocalStorage por el key
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Ejemplo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```js
+const nombre = localStorage.getItem('nombre');
+console.log(nombre); // Juan
 
-### `npm run eject`
+const persona = JSON.parse(localStorage.getItem('persona')); 
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Como eliminar un valor del LocalStorage?
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+LocalStorage tiene un metodo para eliminar un valor por el key
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- removeItem: Elimina un valor del LocalStorage por el key
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Ejemplo
 
-## Learn More
+```js
+localStorage.removeItem('nombre');
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Como eliminar todos los valores del LocalStorage?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+LocalStorage tiene un metodo para eliminar todos los valores
 
-### Code Splitting
+- clear: Elimina todos los valores del LocalStorage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Ejemplo
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```js
+localStorage.clear();
+```
