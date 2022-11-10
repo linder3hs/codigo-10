@@ -35,11 +35,8 @@ const Login = () => {
 
   const validateIsLogged = () => {
     const user = JSON.parse(localStorage.getItem("user"));
-    console.log(user);
-    if (!user) {
-      // no deberiamos enviarlo a la vista tareas?
-      history("/");
-    }
+    // no deberiamos enviarlo a la vista tareas?
+    if (user) history("/");
   };
 
   useEffect(() => {
