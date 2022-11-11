@@ -102,7 +102,7 @@ const Profile = () => {
                   <input
                     type="text"
                     className="form-control"
-                    value={user.location.split(" ")[1]}
+                    value={user?.location?.split(" ")[1]}
                   />
                 </div>
                 <div className="col-12 mt-3">
