@@ -30,7 +30,7 @@ export const AuthProvider = (props) => {
 
   // funcion para validar si la session existe
   function isAuth() {
-    return Object.entries(user).length === 0;
+    return Object.entries(user).length !== 0;
   }
 
   return (
