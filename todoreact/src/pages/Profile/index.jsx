@@ -1,16 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 import { getProfile } from "../../services";
 
 const Profile = () => {
+  const { user: userContext } = useContext(AuthContext);
+
   const [user, setUser] = useState(null);
 
   const fetchUser = async () => {
     const response = await getProfile();
-    const userFromLocalStorage = JSON.parse(localStorage.getItem("user"));
 
     setUser({
       ...response,
-      ...userFromLocalStorage,
+      ...userContext,
     });
   };
 

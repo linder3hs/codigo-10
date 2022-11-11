@@ -1,18 +1,11 @@
-import { useEffect } from "react";
-import { useNavigate, Outlet, Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { Navigate, Outlet, Link } from "react-router-dom";
 
 const MainLayout = () => {
-  const history = useNavigate();
+  const { isAuth } = useContext(AuthContext);
 
-  const validateIsLogged = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
-
-    if (!user) history("/login");
-  };
-
-  useEffect(() => {
-    validateIsLogged();
-  }, []);
+  if (!isAuth()) return <Navigate to="/login" />;
 
   return (
     <div>
