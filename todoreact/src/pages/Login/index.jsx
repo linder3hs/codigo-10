@@ -1,15 +1,16 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { Navigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./index.css";
 
 const Login = () => {
+  const { login, isAuth } = useContext(AuthContext);
+
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
-
-  const history = useNavigate();
 
   const handleInputChange = (e) => {
     setUser({
@@ -29,20 +30,20 @@ const Login = () => {
       return;
     }
     //* Entonces si ambos campos estan llenos vamos a guardarlos en localStorage
-    localStorage.setItem("user", JSON.stringify(user));
-    localStorage.setItem("datos", "10");
-    validateIsLogged();
+    const inicio = login(user.email, user.password);
+
+    if (!inicio) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Usuario o password erroneos",
+      });
+    }
   };
 
-  const validateIsLogged = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    // no deberiamos enviarlo a la vista tareas?
-    if (user) history("/");
-  };
-
-  useEffect(() => {
-    validateIsLogged();
-  }, []);
+  if (isAuth()) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className="bg__login">

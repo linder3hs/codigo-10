@@ -20,6 +20,7 @@ export const AuthProvider = (props) => {
     const user = { email, password };
     localStorage.setItem("user", JSON.stringify(user));
     setUser(user);
+    return true;
   }
 
   function logout() {
