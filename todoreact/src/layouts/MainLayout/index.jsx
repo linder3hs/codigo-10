@@ -22,7 +22,7 @@ const MainLayout = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <Link className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             Todo App
           </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -34,6 +34,15 @@ const MainLayout = () => {
                   to="/perfil"
                 >
                   Perfil
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/todo-mui"
+                >
+                  TodoApp MUI
                 </Link>
               </li>
             </ul>
