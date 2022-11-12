@@ -6,6 +6,7 @@ import {
 	ProfileView,
 	TaskView,
 	LoginView,
+	SignUpView,
 	TodoAppView,
 } from "../pages";
 import { MainLayout } from "../layouts";
@@ -23,6 +24,7 @@ const Router = () => {
 					<Route path="/task/:id" element={<TaskView />} />
 				</Route>
 				<Route path="/login" element={<LoginView />} />
+				<Route path="/signup" element={<SignUpView />} />
 			</Routes>
 		</BrowserRouter>
 	);

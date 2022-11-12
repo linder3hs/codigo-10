@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./index.css";
 
@@ -84,6 +84,12 @@ const Login = () => {
               >
                 Ingresar
               </button>
+              <Link
+                className="btn btn-outline-secondary mt-4"
+                to="/signup"
+              >
+                Registro
+              </Link>
             </div>
           </div>
         </div>
