@@ -25,4 +25,20 @@ export class UserModel {
 		this.createdAt =
 			_createdAt === null ? new Date() : new Date(_createdAt);
 	}
+
+	getFullname() {
+		return (
+			capitalizeFirstLetter(this.name) +
+			" " +
+			capitalizeFirstLetter(this.lastName)
+		);
+	}
+
+	getFullDetails() {
+		return this.getFullname() + " > " + this.createdAt.toDateString();
+	}
+}
+
+function capitalizeFirstLetter(string) {
+	return string.charAt(0).toUpperCase() + string.slice(1);
 }

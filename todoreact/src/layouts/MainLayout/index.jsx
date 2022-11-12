@@ -23,9 +23,7 @@ const MainLayout = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <Link className="navbar-brand" href="/">
-            {user.name}
-            {' '}
-            {user.lastName}
+            {user.getFullDetails()}
           </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">

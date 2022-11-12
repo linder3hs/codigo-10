@@ -2,6 +2,8 @@ import { createContext, useState } from "react";
 
 import { getUsers } from "../services";
 
+import { UserModel } from "../models/UserModel";
+
 export const AuthContext = createContext();
 
 // Crear un Provider: Este provider a proveer la variables y funciones
@@ -11,9 +13,21 @@ export const AuthProvider = (props) => {
 	// y este children viaja por props
 	const { children } = props;
 
-	const [user, setUser] = useState(
-		JSON.parse(localStorage.getItem("user")) ?? {}
-	);
+	const userDB = JSON.parse(localStorage.getItem("user")) || null;
+	let userModel = null;
+	if (userDB) {
+		userModel = new UserModel(
+			userDB.name,
+			userDB.lastName,
+			userDB.email,
+			userDB.pass,
+			userDB.imageProfile,
+			userDB.createdAt,
+			userDB.id
+		);
+	}
+
+	const [user, setUser] = useState(userModel ?? {});
 
 	async function login(email, password) {
 		// Traemos a TODOS los usuarios de mockapi:
@@ -22,7 +36,15 @@ export const AuthProvider = (props) => {
 		let user = null;
 		user = usersDB.find((userDB) => {
 			if (userDB.email === email && userDB.pass === password)
-				return userDB;
+				return new UserModel(
+					userDB.name,
+					userDB.lastName,
+					userDB.email,
+					userDB.pass,
+					userDB.imageProfile,
+					userDB.createdAt,
+					userDB.id
+				);
 		});
 		if (!user) return false;
 		localStorage.setItem("user", JSON.stringify(user));

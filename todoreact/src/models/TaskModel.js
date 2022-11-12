@@ -4,13 +4,15 @@ export class TaskModel {
 	// createdAt: String
 	// doneAt: String
 	// deletedAt: String
+	// userId: Int
 
 	constructor(
 		_id = null,
 		_name = null,
 		_createdAt = null,
 		_doneAt = null,
-		_deletedAt = null
+		_deletedAt = null,
+		_userId = null
 	) {
 		if (_id !== null) this.id = _id;
 		if (_name !== null) this.name = _name;
@@ -18,6 +20,7 @@ export class TaskModel {
 			_createdAt === null ? new Date() : new Date(_createdAt);
 		this.doneAt = _doneAt === null ? null : new Date(_doneAt);
 		this.deletedAt = _deletedAt === null ? null : new Date(_deletedAt);
+		this.userId = _userId;
 	}
 
 	timeElapsed(date) {
