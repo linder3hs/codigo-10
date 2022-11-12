@@ -14,8 +14,11 @@ import { Link } from "react-router-dom";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { UserModel } from "../../models/UserModel";
 import { postUser } from "../../services";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
+	const history = useNavigate();
+
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		const data = new FormData(event.currentTarget);
@@ -26,6 +29,7 @@ function SignUp() {
 			data.get("password")
 		);
 		await postUser(newUser);
+		history("/login");
 	};
 	return (
 		<Container component="main" maxWidth="xs">

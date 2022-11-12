@@ -73,6 +73,16 @@ export const postUser = async (user) => {
 	}
 };
 
+export const getUsers = async () => {
+	try {
+		const response = await fetch(urlUsers);
+		const data = await response.json();
+		return data;
+	} catch (error) {
+		console.log(error);
+	}
+};
+
 // id: Tarea
 export const update = async (id, body) => {
 	try {

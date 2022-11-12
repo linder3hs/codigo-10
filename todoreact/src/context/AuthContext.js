@@ -1,49 +1,56 @@
 import { createContext, useState } from "react";
 
+import { getUsers } from "../services";
+
 export const AuthContext = createContext();
 
 // Crear un Provider: Este provider a proveer la variables y funciones
 // que creemos
 export const AuthProvider = (props) => {
-  // La palabra children hace referencia a los components hijo
-  // y este children viaja por props
-  const { children } = props;
+	// La palabra children hace referencia a los components hijo
+	// y este children viaja por props
+	const { children } = props;
 
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem("user")) ?? {}
-  );
+	const [user, setUser] = useState(
+		JSON.parse(localStorage.getItem("user")) ?? {}
+	);
 
-  function login(email, password) {
-    // aca vamos a comparar con un usuario fake
-    if (email !== "linder@gmail.com" || password !== "123456") return false;
+	async function login(email, password) {
+		// Traemos a TODOS los usuarios de mockapi:
+		const usersDB = await getUsers();
+		// Buscamos dentro de usersDB, el usuario con el email y password:
+		let user = null;
+		user = usersDB.find((userDB) => {
+			if (userDB.email === email && userDB.pass === password)
+				return userDB;
+		});
+		if (!user) return false;
+		localStorage.setItem("user", JSON.stringify(user));
+		setUser(user);
+		return true;
+	}
 
-    const user = { email, password };
-    localStorage.setItem("user", JSON.stringify(user));
-    setUser(user);
-    return true;
-  }
+	function logout() {
+		localStorage.clear();
+		setUser({});
+		window.location.href = "/login";
+	}
 
-  function logout() {
-    localStorage.clear();
-    setUser({});
-    window.location.href = "/login";
-  }
+	// funcion para validar si la session existe
+	function isAuth() {
+		return Object.entries(user).length !== 0;
+	}
 
-  // funcion para validar si la session existe
-  function isAuth() {
-    return Object.entries(user).length !== 0;
-  }
-
-  return (
-    <AuthContext.Provider
-      value={{
-        user,
-        login,
-        logout,
-        isAuth,
-      }}
-    >
-      {children}
-    </AuthContext.Provider>
-  );
+	return (
+		<AuthContext.Provider
+			value={{
+				user,
+				login,
+				logout,
+				isAuth,
+			}}
+		>
+			{children}
+		</AuthContext.Provider>
+	);
 };
