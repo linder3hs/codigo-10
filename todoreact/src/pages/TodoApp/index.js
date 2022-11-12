@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import {
 	Container,
@@ -14,8 +14,12 @@ import {
 import AddTaskIcon from "@mui/icons-material/AddTask";
 import ClearIcon from "@mui/icons-material/Clear";
 
+import { post } from "../../services";
+import { TaskModel } from "../../models/TaskModel";
+
 function TodoApp() {
 	const [inputButtons, setInputButtons] = useState(true);
+	const inputElement = useRef();
 
 	const handleInputChange = (event) => {
 		if (event.target.value !== "") {
@@ -23,6 +27,19 @@ function TodoApp() {
 		} else {
 			setInputButtons(true);
 		}
+	};
+
+	const handleInputKeyPress = (event) => {
+		if (event.key == "Enter") {
+			addTask();
+		}
+	};
+
+	const addTask = async () => {
+		if (inputElement.current.value === "") return;
+		const newtask = new TaskModel(null, inputElement.current.value);
+		await post(newtask);
+		inputElement.current.value = "";
 	};
 
 	return (
@@ -41,7 +58,6 @@ function TodoApp() {
 							}}
 						/>
 						<Paper
-							component="form"
 							sx={{
 								p: "2px 4px",
 								display: "flex",
@@ -50,11 +66,10 @@ function TodoApp() {
 						>
 							<InputBase
 								onChange={handleInputChange}
-								sx={{ ml: 1, flex: 1 }}
+								onKeyPress={handleInputKeyPress}
+								sx={{ ml: 2, flex: 1 }}
 								placeholder="My new task..."
-								inputProps={{
-									"aria-label": "search google maps",
-								}}
+								inputRef={inputElement}
 							/>
 							{inputButtons || (
 								<IconButton
@@ -75,6 +90,7 @@ function TodoApp() {
 								sx={{ p: "10px" }}
 								aria-label="directions"
 								disabled={inputButtons}
+								onClick={addTask}
 							>
 								<AddTaskIcon />
 							</IconButton>
