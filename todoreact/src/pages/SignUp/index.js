@@ -12,15 +12,20 @@ import {
 import { Link } from "react-router-dom";
 
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import { UserModel } from "../../models/UserModel";
+import { postUser } from "../../services";
 
 function SignUp() {
-	const handleSubmit = (event) => {
+	const handleSubmit = async (event) => {
 		event.preventDefault();
 		const data = new FormData(event.currentTarget);
-		console.log({
-			email: data.get("email"),
-			password: data.get("password"),
-		});
+		const newUser = new UserModel(
+			data.get("firstName"),
+			data.get("lastName"),
+			data.get("email"),
+			data.get("password")
+		);
+		await postUser(newUser);
 	};
 	return (
 		<Container component="main" maxWidth="xs">
