@@ -9,3 +9,5 @@ export { default as LoginView } from "./Login";
 export { default as SignUpView } from "./SignUp";
 
 export { default as TodoAppView } from "./TodoApp";
+
+export { default as BooksView } from "./Books";

@@ -32,7 +32,7 @@ function TodoApp() {
 	};
 
 	const handleInputKeyPress = (event) => {
-		if (event.key == "Enter") {
+		if (event.key === "Enter") {
 			addTask();
 		}
 	};
