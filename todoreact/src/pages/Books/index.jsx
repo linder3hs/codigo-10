@@ -8,14 +8,16 @@ import {
   TextField,
   Button,
 } from "@mui/material";
+import { getBooks } from "../../services";
 
 const Books = () => {
   const [search, setSearch] = useState("");
 
   const handleInputChange = (e) => setSearch(e.target.value);
 
-  const handleSubmit = () => {
-    console.log(search);
+  const handleSubmit = async () => {
+    const books = await getBooks(search);
+    console.log(books);
   };
 
   return (
