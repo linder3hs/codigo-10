@@ -1,36 +1,45 @@
 import {
   Box,
   Button,
-  Card,
   CardContent,
   CardMedia,
   Typography,
+  Paper,
 } from "@mui/material";
 
 const BookItem = (props) => {
   const { book } = props;
 
   return (
-    <Card>
+    <Paper
+      elevation={5}
+      sx={{
+        borderRadius: 4,
+      }}
+    >
       <CardMedia
         src={book.volumeInfo?.imageLinks?.thumbnail}
-        height={300}
+        height={250}
+        sx={{
+          borderTopLeftRadius: 18,
+          borderTopRightRadius: 18,
+        }}
         component="img"
       />
       <CardContent>
-        <Typography fontWeight="900" variant="h6">
-          {book.volumeInfo.title}
+        <Typography fontWeight="900" variant="body1">
+          {book.volumeInfo.title.substring(0, 20)}
         </Typography>
-        <Typography variant="body1">
-          {book.volumeInfo?.description?.substring(0, 120)}...
+        <Typography variant="body1" mt={3}>
+          {book.volumeInfo?.description?.substring(0, 40)}...
         </Typography>
-        <Box my={2}>
-          <Button fullWidth color="success" variant="contained">
+        <Box mt={2}>
+          <Button fullWidth color="success">
             Agregar
           </Button>
         </Box>
       </CardContent>
-    </Card>
+    </Paper>
   );
 };
 
