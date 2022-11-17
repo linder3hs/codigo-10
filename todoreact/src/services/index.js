@@ -4,7 +4,9 @@ const urlBooks = "https://www.googleapis.com/books/v1/volumes?q=";
 
 export const getBooks = async (search) => {
   try {
-    const response = await fetch(`${urlBooks}${search}&maxResults=20`);
+    const response = await fetch(
+      `${urlBooks}${search}&maxResults=20`
+    );
     const data = await response.json();
     return data;
   } catch (error) {
