@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Navigate, Link } from "react-router-dom";
+import { Box, Button, TextField } from "@mui/material";
 import Swal from "sweetalert2";
 import "./index.css";
 
@@ -61,36 +62,46 @@ const Login = () => {
         >
           <div className="my-3">
             <h1>Login</h1>
-            <input
-              type="text"
-              className="form-control mt-4"
-              placeholder="Ingrese su email"
-              name="email"
-              value={user.email}
-              onChange={handleInputChange}
-            />
-            <input
-              type="password"
-              className="form-control mt-4"
-              placeholder="Ingrese su password"
-              name="password"
-              value={user.password}
-              onChange={handleInputChange}
-            />
-            <div className="d-grid">
-              <button
-                className="btn btn-outline-primary mt-4"
-                onClick={handleLogin}
-              >
+            <Box my={3}>
+              <TextField
+                mt={3}
+                size="small"
+                fullWidth
+                type="text"
+                label="Email"
+                name="email"
+                value={user.email}
+                onChange={handleInputChange}
+              />
+            </Box>
+            <Box my={3}>
+              <TextField
+                mt={3}
+                size="small"
+                fullWidth
+                type="password"
+                label="Password"
+                name="password"
+                value={user.password}
+                onChange={handleInputChange}
+              />
+            </Box>
+            <Box my={3}>
+              <Button variant="contained" fullWidth onClick={handleLogin}>
                 Ingresar
-              </button>
-              <Link
-                className="btn btn-outline-secondary mt-4"
+              </Button>
+            </Box>
+            <Box my={3}>
+              <Button
+                variant="outlined"
+                color="secondary"
+                fullWidth
+                component={Link}
                 to="/signup"
               >
                 Registro
-              </Link>
-            </div>
+              </Button>
+            </Box>
           </div>
         </div>
       </div>
