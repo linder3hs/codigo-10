@@ -56,8 +56,8 @@ const Books = () => {
       <Box my={3}>
         <Grid container spacing={3}>
           {books.length > 0 &&
-            books.map((book) => (
-              <Grid item md={2} xs={12}>
+            books.map((book, index) => (
+              <Grid key={index} item md={2} xs={12}>
                 <BookItem book={book} />
               </Grid>
             ))}
