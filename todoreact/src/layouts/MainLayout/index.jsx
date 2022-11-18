@@ -1,9 +1,55 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Navigate, Outlet, Link } from "react-router-dom";
+import {
+  AppBar,
+  Box,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Toolbar,
+  Typography,
+  Button,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 
-const MainLayout = () => {
+const drawerWidth = 240;
+const navItems = ["Perfil", "Book Store", "Logout"];
+
+const MainLayout = (props) => {
+  const { window } = props;
+
   const { isAuth, user, logout } = useContext(AuthContext);
+
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
+        MUI
+      </Typography>
+      <Divider />
+      <List>
+        {navItems.map((item) => (
+          <ListItem key={item} disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={item} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
+  const container = !window ? () => window().document.body : undefined;
 
   if (!isAuth()) return <Navigate to="/login" />;
 
@@ -39,13 +85,21 @@ const MainLayout = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <a
-                  href=""
-                  className="nav-link active text-danger"
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/books"
+                >
+                  Bookstore
+                </Link>
+              </li>
+              <li className="nav-item">
+                <button
+                  className="btn btn-link active text-danger"
                   onClick={logout}
                 >
                   Logout
-                </a>
+                </button>
               </li>
             </ul>
           </div>
