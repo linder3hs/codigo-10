@@ -22,7 +22,7 @@ export const BookProvider = (props) => {
         addItem,
       }}
     >
-      {{ children }}
+      {children}
     </BookContext.Provider>
   );
 };

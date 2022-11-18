@@ -3,6 +3,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { Navigate, Outlet, Link } from "react-router-dom";
 import {
   AppBar,
+  Badge,
   Box,
   Divider,
   Drawer,
@@ -15,12 +16,19 @@ import {
   Typography,
   Button,
 } from "@mui/material";
+import { BookContext } from "../../context/BookContext";
 import MenuIcon from "@mui/icons-material/Menu";
+import Person4RoundedIcon from "@mui/icons-material/Person4Rounded";
+import MenuBookRoundedIcon from "@mui/icons-material/MenuBookRounded";
+import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
+import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 
 const drawerWidth = 240;
 
 const MainLayout = () => {
   const { isAuth, user, logout } = useContext(AuthContext);
+
+  const { cartBooks } = useContext(BookContext);
 
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -78,13 +86,18 @@ const MainLayout = () => {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             <Button component={Link} to="/perfil" sx={{ color: "#fff" }}>
-              Perfil
+              <Person4RoundedIcon />
             </Button>
             <Button component={Link} to="/books" sx={{ color: "#fff" }}>
-              Book Store
+              <MenuBookRoundedIcon />
+            </Button>
+            <Button sx={{ color: "#fff" }}>
+              <Badge badgeContent={cartBooks.length} color="error">
+                <ShoppingCartRoundedIcon />
+              </Badge>
             </Button>
             <Button variant="contained" onClick={logout} color="error">
-              Logout
+              <LoginRoundedIcon />
             </Button>
           </Box>
         </Toolbar>

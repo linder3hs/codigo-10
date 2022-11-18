@@ -1,10 +1,13 @@
 import { AuthProvider } from "./context/AuthContext";
+import { BookProvider } from "./context/BookContext";
 import Router from "./routes";
 
 function App() {
   return (
     <AuthProvider>
-      <Router />
+      <BookProvider>
+        <Router />
+      </BookProvider>
     </AuthProvider>
   );
 }
