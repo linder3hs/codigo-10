@@ -83,7 +83,7 @@ const MainLayout = () => {
             <Button component={Link} to="/books" sx={{ color: "#fff" }}>
               Book Store
             </Button>
-            <Button onClick={logout} color="error">
+            <Button variant="contained" onClick={logout} color="error">
               Logout
             </Button>
           </Box>
