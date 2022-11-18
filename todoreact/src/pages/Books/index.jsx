@@ -40,6 +40,7 @@ const Books = () => {
               </Grid>
               <Grid item xs={12} md={3}>
                 <Button
+                  disabled={!search}
                   fullWidth
                   onClick={handleSubmit}
                   variant="contained"
