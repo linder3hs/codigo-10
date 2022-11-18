@@ -15,11 +15,23 @@ export const BookProvider = (props) => {
     localStorage.setItem("books", JSON.stringify(newBooks));
   }
 
+  function deleteItem(book) {
+    const newBooks = cartBooks.filter((item) => item.id !== book.id);
+    setCartBooks([...newBooks]);
+    localStorage.setItem("books", JSON.stringify(newBooks));
+  }
+
+  function searchBookInArray(book) {
+    return cartBooks.find((item) => item.id === book.id);
+  }
+
   return (
     <BookContext.Provider
       value={{
         cartBooks,
         addItem,
+        deleteItem,
+        searchBookInArray,
       }}
     >
       {children}
