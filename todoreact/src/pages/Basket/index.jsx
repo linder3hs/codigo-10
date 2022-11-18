@@ -13,13 +13,15 @@ import {
 const Basket = () => {
   const { cartBooks, deleteItem } = useContext(BookContext);
 
-  const total = cartBooks
-    .map((book) =>
-      book.saleInfo.saleability === "NOT_FOR_SALE"
-        ? 0
-        : book.saleInfo.listPrice.amount
-    )
-    .reduce((prev, curr) => prev + curr);
+  const total =
+    cartBooks.length > 0 &&
+    cartBooks
+      .map((book) =>
+        book.saleInfo.saleability === "NOT_FOR_SALE"
+          ? 0
+          : book.saleInfo.listPrice.amount
+      )
+      .reduce((prev, curr) => prev + curr);
 
   return (
     <Container>
