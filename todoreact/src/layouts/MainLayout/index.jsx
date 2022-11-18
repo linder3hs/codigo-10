@@ -91,7 +91,7 @@ const MainLayout = () => {
             <Button component={Link} to="/books" sx={{ color: "#fff" }}>
               <MenuBookRoundedIcon />
             </Button>
-            <Button sx={{ color: "#fff" }}>
+            <Button sx={{ color: "#fff" }} component={Link} to="/basket">
               <Badge badgeContent={cartBooks.length} color="error">
                 <ShoppingCartRoundedIcon />
               </Badge>
