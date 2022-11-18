@@ -12,7 +12,7 @@ import {
 const BookItem = (props) => {
   const { book } = props;
 
-  const { addItem, searchBookInArray } = useContext(BookContext);
+  const { addItem, deleteItem, searchBookInArray } = useContext(BookContext);
 
   return (
     <Paper
@@ -39,7 +39,7 @@ const BookItem = (props) => {
         </Typography>
         <Box mt={2}>
           {searchBookInArray(book) ? (
-            <Button onClick={() => addItem(book)} fullWidth color="error">
+            <Button onClick={() => deleteItem(book)} fullWidth color="error">
               Eliminar
             </Button>
           ) : (
