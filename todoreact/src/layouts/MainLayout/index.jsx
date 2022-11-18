@@ -18,11 +18,8 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 
 const drawerWidth = 240;
-const navItems = ["Perfil", "Book Store", "Logout"];
 
-const MainLayout = (props) => {
-  const { window } = props;
-
+const MainLayout = () => {
   const { isAuth, user, logout } = useContext(AuthContext);
 
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -34,79 +31,86 @@ const MainLayout = (props) => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        {user.name}
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem disablePadding href="/perfil">
+          <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemText primary="Perfil" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding href="/books">
+          <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemText primary="Bookstore" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding onClick={logout}>
+          <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemText primary="Logout" />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
 
-  const container = !window ? () => window().document.body : undefined;
-
   if (!isAuth()) return <Navigate to="/login" />;
 
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarTogglerDemo03"
-            aria-controls="navbarTogglerDemo03"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+    <Box>
+      <AppBar component="nav">
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
           >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <Link className="navbar-brand" href="/">
-            {user.name} {user.lastName}
-            {" > "}
-            {new Date(user.createdAt).toDateString()}
-          </Link>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link
-                  className="nav-link active"
-                  aria-current="page"
-                  to="/perfil"
-                >
-                  Perfil
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link active"
-                  aria-current="page"
-                  to="/books"
-                >
-                  Bookstore
-                </Link>
-              </li>
-              <li className="nav-item">
-                <button
-                  className="btn btn-link active text-danger"
-                  onClick={logout}
-                >
-                  Logout
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <Outlet />
-    </div>
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+          >
+            {user.name}
+          </Typography>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            <Button component={Link} to="/perfil" sx={{ color: "#fff" }}>
+              Perfil
+            </Button>
+            <Button component={Link} to="/books" sx={{ color: "#fff" }}>
+              Book Store
+            </Button>
+            <Button onClick={logout} color="error">
+              Logout
+            </Button>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <Box component="nav">
+        <Drawer
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{ keepMounted: true }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </Box>
+      <Box component="main" sx={{ p: 3 }}>
+        <Toolbar />
+        <Outlet />
+      </Box>
+    </Box>
   );
 };
 
